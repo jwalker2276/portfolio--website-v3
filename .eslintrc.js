@@ -2,6 +2,7 @@ module.exports = {
   // Specifies the ESLint parser for TypeScript
   parser: "@typescript-eslint/parser",
   extends: [
+    "eslint:recommended",
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
     "prettier/@typescript-eslint",
