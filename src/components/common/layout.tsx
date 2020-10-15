@@ -1,14 +1,7 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import { createGlobalStyle } from "styled-components";
-import Header from "./header";
+import Header from "../header/header";
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -34,7 +27,7 @@ const Layout = ({ children }: Props): JSX.Element => {
   return (
     <>
       <GlobalStyle />
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <Header />
       <div>
         <main>{children}</main>
         <footer>© {new Date().getFullYear()}</footer>
