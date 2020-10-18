@@ -6,11 +6,19 @@ import PrimaryCallToAction from "../../common/buttons/PrimaryCallToAction";
 
 const StyledHeroSection = styled.section``;
 
+// Onclick event for button
+const primaryActionEvent = (): void => {
+  console.log("Clicked lets talk");
+};
+
 const HeroSection = (): JSX.Element => (
   <StyledHeroSection>
     <SecondaryHeading />
     <PrimaryHeading />
-    <PrimaryCallToAction />
+    <PrimaryCallToAction
+      buttonText="Let's talk"
+      buttonEvent={primaryActionEvent}
+    />
   </StyledHeroSection>
 );
 
