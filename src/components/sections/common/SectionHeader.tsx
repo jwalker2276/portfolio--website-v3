@@ -3,12 +3,20 @@ import styled from "styled-components";
 import SectionTitle from "./SectionTitle";
 import SectionSubTitle from "./SectionSubTitle";
 
+type SectionHeaderProps = {
+  titleText: string;
+  subTitleText: string;
+};
+
 const StyledSectionHeader = styled.header``;
 
-const SectionHeader = (): JSX.Element => (
+const SectionHeader = ({
+  titleText,
+  subTitleText,
+}: SectionHeaderProps): JSX.Element => (
   <StyledSectionHeader>
-    <SectionTitle text="What I Do" />
-    <SectionSubTitle text="I create visually appealing apps with clean code." />
+    <SectionTitle text={titleText} />
+    <SectionSubTitle text={subTitleText} />
   </StyledSectionHeader>
 );
 

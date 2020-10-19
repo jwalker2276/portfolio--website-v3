@@ -36,7 +36,10 @@ const primaryActionEvent = (): void => {
 
 const SkillsetSection = (): JSX.Element => (
   <StyledSection>
-    <SectionHeader />
+    <SectionHeader
+      titleText="What I Do"
+      subTitleText="I create visually appealing apps with clean code."
+    />
     <SkillsetRow columnSelection="right">
       <SkillsetRowIconsContainer
         largeIcon={CodeIcon}
