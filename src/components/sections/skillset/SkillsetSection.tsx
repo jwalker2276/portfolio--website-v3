@@ -40,21 +40,21 @@ const SkillsetSection = (): JSX.Element => (
       titleText="What I Do"
       subTitleText="I create visually appealing apps with clean code."
     />
-    <SkillsetRow columnSelection="right">
+    <SkillsetRow>
       <SkillsetRowIconsContainer
         largeIcon={CodeIcon}
         smallIcons={[ApplicationIcon, ServerIcon]}
       />
       <SkillsetRowTextContainer titleText={rowOneTitle} text={rowOneText} />
     </SkillsetRow>
-    <SkillsetRow columnSelection="left">
+    <SkillsetRow>
       <SkillsetRowIconsContainer
         largeIcon={CodeIcon}
         smallIcons={[SwatchIcon, PhotoIcon]}
       />
       <SkillsetRowTextContainer titleText={rowTwoTitle} text={rowTwoText} />
     </SkillsetRow>
-    <SkillsetRow columnSelection="right">
+    <SkillsetRow>
       <SkillsetRowIconsContainer
         largeIcon={CodeIcon}
         smallIcons={[TuneIcon, CogIcon]}

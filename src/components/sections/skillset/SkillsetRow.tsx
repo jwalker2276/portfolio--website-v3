@@ -3,7 +3,6 @@ import styled from "styled-components";
 
 type SkillsetSectionRowProps = {
   children: React.ReactNode;
-  columnSelection: string;
 };
 
 const StyledSkillsetSectionRow = styled.div``;
