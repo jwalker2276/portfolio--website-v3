@@ -5,6 +5,7 @@ import AboutRow from "./AboutRow";
 import AboutRowIconsContainer from "./AboutRowIconsContainer";
 import AboutRowText from "./AboutRowText";
 import PrimaryCallToActionButton from "../../common/buttons/PrimaryCallToAction";
+import SectionIntroText from "../common/SectionIntroText";
 
 const infoOne =
   "I strive to create interesting and attractive front-end assets following a component-based approach. I’m constantly researching new technologies, best practices, and techniques to tune my products for the target audience. As for technologies, I work with a variety of tools that allow me to swiftly engineer assets for your project.";
@@ -25,6 +26,7 @@ const AboutSection = (): JSX.Element => (
       titleText="Who I am"
       subTitleText="About my craft and knowledge."
     />
+    <SectionIntroText displayText="I'm passionate about creating interesting web assets with a strong emphasis on clean code." />
     <AboutRow>
       <AboutRowIconsContainer />
       <AboutRowText textToDisplay={infoOne} />
