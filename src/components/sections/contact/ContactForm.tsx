@@ -2,14 +2,15 @@ import React, { useReducer } from "react";
 import styled from "styled-components";
 import ContactFormLabel from "./ContactFormLabel";
 import ContactFormInput from "./ContactFormInput";
+import PrimaryCallToAction from "../../common/buttons/PrimaryCallToAction";
 
 const StyledContactForm = styled.form``;
 
-type Action =
-  | { type: "updateName"; value: string }
-  | { type: "updateEmail"; value: string }
-  | { type: "updateProject"; value: string }
-  | { type: "updateMessage"; value: string };
+// type Action =
+//   | { type: "updateName"; value: string }
+//   | { type: "updateEmail"; value: string }
+//   | { type: "updateProject"; value: string }
+//   | { type: "updateMessage"; value: string };
 
 // Form state
 const formState = {
@@ -19,33 +20,28 @@ const formState = {
   message: "",
 };
 
-const formReducer = (
-  prevState: typeof formState,
-  action: Action
-): typeof formState => {
-  switch (action.type) {
-    case "updateName":
-      return { ...prevState, username: prevState.username += action.value };
-    default:
-      return prevState;
-  }
+// const formReducer = (state, action) => {};
+
+// const [state, dispatch] = useReducer(formReducer, formState);
+
+const onSubmit = (): void => {
+  // e.preventDefault();
+
+  console.log("Submitted");
 };
 
-const [state, dispatch] = useReducer(formReducer, formState);
-
 const ContactForm = (): JSX.Element => (
-  <StyledContactForm action="" method="">
+  <StyledContactForm onSubmit={onSubmit}>
     <ContactFormLabel forValue="name" labelText="Name" />
-    {/* <ContactFormInput
+    <ContactFormInput
       inputType="text"
       inputName="name"
-      inputOnChangeEvent={(): void =>
-        dispatch({ type: "updateName", value: "" })
-      }
-      inputValue={state.username}
+      inputOnChangeEvent={(): void => console.log("changing text")}
+      inputValue={"test"}
       required
       placeholderText="Fullname"
-    /> */}
+    />
+    <PrimaryCallToAction buttonText="Send" />
   </StyledContactForm>
 );
 
