@@ -5,8 +5,13 @@ import NavWrapper from "../nav/NavWrapper";
 import Footer from "../footer/Footer";
 // Font
 import "typeface-inter";
+// Normalize
+import { normalize } from "styled-normalize";
 
 const GlobalStyle = createGlobalStyle`
+  /* Normalize css styles */
+  ${normalize}
+  
   body {
     background-color: white;
     font-family: "Inter", georgia, serif;
