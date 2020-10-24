@@ -5,7 +5,10 @@ type SkillsetRowTextProps = {
   text: string;
 };
 
-const StyledSkillsetRowText = styled.p``;
+const StyledSkillsetRowText = styled.p`
+  max-width: 384px;
+  line-height: 1.2;
+`;
 
 const SkillsetRowText = ({ text }: SkillsetRowTextProps): JSX.Element => (
   <StyledSkillsetRowText>{text}</StyledSkillsetRowText>

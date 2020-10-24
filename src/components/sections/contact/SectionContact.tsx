@@ -7,6 +7,7 @@ import SecondaryContactMethod from "./SecondaryContactMethod";
 
 const StyledSectionContact = styled.section`
   padding: var(--page--padding);
+  padding-bottom: 128px;
   width: 100%;
 `;
 

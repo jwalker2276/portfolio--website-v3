@@ -10,6 +10,7 @@ type SectionHeaderProps = {
 
 const StyledSectionHeader = styled.header`
   padding: 24px 0;
+  align-self: start;
 `;
 
 const SectionHeader = ({

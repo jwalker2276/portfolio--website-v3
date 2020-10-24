@@ -5,7 +5,14 @@ type SkillsetSectionRowProps = {
   children: React.ReactNode;
 };
 
-const StyledSkillsetSectionRow = styled.div``;
+const StyledSkillsetSectionRow = styled.div`
+  display: grid;
+  grid-template: 1fr / 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+  width: 100%;
+  margin: 128px 0;
+`;
 
 const SkillsetSectionRow = ({
   children,

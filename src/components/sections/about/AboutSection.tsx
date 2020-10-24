@@ -20,6 +20,7 @@ const primaryActionEvent = (): void => {
 
 const StyledAboutSection = styled.section`
   padding: var(--page--padding);
+  padding-bottom: 128px;
   width: 100%;
 `;
 

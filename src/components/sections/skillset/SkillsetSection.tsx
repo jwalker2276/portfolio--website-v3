@@ -14,11 +14,6 @@ import ServerIcon from "../../../images/icon-server.svg";
 import SwatchIcon from "../../../images/icon-swatch.svg";
 import TuneIcon from "../../../images/icon-tune.svg";
 
-const StyledSection = styled.section`
-  padding: var(--page--padding);
-  width: 100%;
-`;
-
 // Content for this section
 const rowOneTitle = "Custom Web Application";
 const rowOneText =
@@ -31,6 +26,16 @@ const rowTwoText =
 const rowThreeTitle = "Feature Development";
 const rowThreeText =
   "Already have an existing site but need new features? I can develop new features to work with your existing codebase.";
+
+const StyledSection = styled.section`
+  padding: var(--page--padding);
+  padding-bottom: 128px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+`;
 
 // Onclick event for button
 const primaryActionEvent = (): void => {
@@ -51,11 +56,11 @@ const SkillsetSection = (): JSX.Element => (
       <SkillsetRowTextContainer titleText={rowOneTitle} text={rowOneText} />
     </SkillsetRow>
     <SkillsetRow>
+      <SkillsetRowTextContainer titleText={rowTwoTitle} text={rowTwoText} />
       <SkillsetRowIconsContainer
         largeIcon={CodeIcon}
         smallIcons={[SwatchIcon, PhotoIcon]}
       />
-      <SkillsetRowTextContainer titleText={rowTwoTitle} text={rowTwoText} />
     </SkillsetRow>
     <SkillsetRow>
       <SkillsetRowIconsContainer

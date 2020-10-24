@@ -1,31 +1,39 @@
 import React from "react";
 import styled from "styled-components";
 import SkillsetIcon from "./SkillsetIcon";
+import SkillsetAnimatedIcons from "./SkillsetAnimatedIcons";
 
 type IconsContainerProps = {
   largeIcon: string;
   smallIcons: string[];
 };
 
-const StyledRowIconsContainer = styled.div``;
+const StyledRowIconsContainer = styled.div`
+  width: 100%;
+  max-width: 384px;
+  height: 100%;
+  display: grid;
+  grid-template: 128px / 128px 1fr 65px;
+  justify-items: center;
+  align-items: center;
+`;
+
+const StyledHR = styled.hr`
+  border: 0 none;
+  border-top: 2px dashed var(--neutral--color-000);
+  background: none;
+  width: 100%;
+  height: 0px;
+`;
 
 const SkillsetRowIconsContainer = ({
   largeIcon,
   smallIcons,
 }: IconsContainerProps): JSX.Element => (
   <StyledRowIconsContainer>
-    <SkillsetIcon
-      iconSource={largeIcon}
-      iconAlt="code"
-      iconHeight="83"
-      iconWidth="80"
-    />
-    <SkillsetIcon
-      iconSource={smallIcons[0]}
-      iconAlt="application"
-      iconHeight="40"
-      iconWidth="40"
-    />
+    <SkillsetIcon iconSource={largeIcon} iconAlt="code" />
+    <StyledHR />
+    <SkillsetAnimatedIcons iconSources={smallIcons} iconAlt="application" />
   </StyledRowIconsContainer>
 );
 
