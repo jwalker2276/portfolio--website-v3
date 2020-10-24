@@ -11,11 +11,32 @@ import { normalize } from "styled-normalize";
 const GlobalStyle = createGlobalStyle`
   /* Normalize css styles */
   ${normalize}
+
+  /* Root Colors */
+  :root {
+    /* Primary */
+    --primary--color-000: #e3f8ff;
+    --primary--color-100: #b3ecff;
+    --primary--color-600: #1992d4;
+    /* Neutrals */
+    --neutral--color-000: #f5f7fa;
+    --neutral--color-100: #e4e7eb;
+    --neutral--color-200: #cbd2d9;
+    --neutral--color-500: #616e7c;
+    --neutral--color-800: #323f4b;
+    --neutral--color-900: #1f2933;
+  }
   
   body {
-    background-color: white;
+    background-color: var(--neutral--color-900);
     font-family: "Inter", georgia, serif;
     font-weight: normal;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
   }
 `;
 
