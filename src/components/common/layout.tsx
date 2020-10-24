@@ -3,10 +3,14 @@ import React from "react";
 import { createGlobalStyle } from "styled-components";
 import NavWrapper from "../nav/NavWrapper";
 import Footer from "../footer/Footer";
+// Font
+import "typeface-inter";
 
 const GlobalStyle = createGlobalStyle`
   body {
     background-color: white;
+    font-family: "Inter", georgia, serif;
+    font-weight: normal;
   }
 `;
 
