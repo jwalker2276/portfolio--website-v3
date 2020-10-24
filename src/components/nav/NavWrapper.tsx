@@ -4,7 +4,15 @@ import Logo from "../common/Logo";
 import MenuButton from "./MenuButton";
 import NavActions from "./NavActions";
 
-const StyledNavWrapper = styled.header``;
+const StyledNavWrapper = styled.header`
+  width: 100%;
+  height: 72px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+`;
 
 const NavWrapper = (): JSX.Element => {
   // State

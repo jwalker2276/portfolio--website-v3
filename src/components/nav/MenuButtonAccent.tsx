@@ -1,17 +1,18 @@
 import React from "react";
 import styled from "styled-components";
 
-const StyledMenuButtonAccent = styled.svg``;
+const StyledMenuButtonAccent = styled.svg`
+  width: 24px;
+  height: 24px;
+  fill: var(--neutral--color-900);
+  stroke: var(--primary--color-100);
+  stroke-width: 2;
+`;
 
 const MenuButtonAccent = (): JSX.Element => (
   <StyledMenuButtonAccent
     xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
     viewBox="0 0 24 24"
-    fill="none"
-    stroke="white"
-    stroke-width="2"
     stroke-linecap="round"
     stroke-linejoin="round"
   >
