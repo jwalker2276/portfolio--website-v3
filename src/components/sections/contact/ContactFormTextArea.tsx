@@ -1,26 +1,24 @@
 import React from "react";
 import styled from "styled-components";
 
-type ContactFormInputProps = {
-  inputType: string;
+type ContactFormTextAreaProps = {
   inputName: string;
-  inputOnChangeEvent: (e: React.FormEvent<HTMLInputElement>) => void;
+  inputOnChangeEvent: (e: React.FormEvent<HTMLTextAreaElement>) => void;
   inputValue: string;
   placeholderText: string;
 };
 
-const StyledContactFormInput = styled.input``;
+const StyledContactFormTextArea = styled.textarea``;
 
-const ContactFormInput = ({
-  inputType,
+const ContactFormTextArea = ({
   inputName,
   inputOnChangeEvent,
   inputValue,
-
   placeholderText,
-}: ContactFormInputProps): JSX.Element => (
-  <StyledContactFormInput
-    type={inputType}
+}: ContactFormTextAreaProps): JSX.Element => (
+  <StyledContactFormTextArea
+    rows={5}
+    cols={33}
     name={inputName}
     onChange={inputOnChangeEvent}
     value={inputValue}
@@ -29,4 +27,4 @@ const ContactFormInput = ({
   />
 );
 
-export default ContactFormInput;
+export default ContactFormTextArea;
