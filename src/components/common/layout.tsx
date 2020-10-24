@@ -33,7 +33,9 @@ const GlobalStyle = createGlobalStyle`
   body {
     background-color: var(--neutral--color-900);
     font-family: "Inter", georgia, serif;
-    font-weight: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--neutral--color-000);
   }
 
   * {

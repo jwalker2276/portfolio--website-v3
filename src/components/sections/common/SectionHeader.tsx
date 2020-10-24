@@ -8,7 +8,9 @@ type SectionHeaderProps = {
   subTitleText: string;
 };
 
-const StyledSectionHeader = styled.header``;
+const StyledSectionHeader = styled.header`
+  padding: 24px 0;
+`;
 
 const SectionHeader = ({
   titleText,
