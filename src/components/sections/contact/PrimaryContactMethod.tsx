@@ -19,18 +19,19 @@ const PrimaryContactMethod = (): JSX.Element => (
       icon={LinkedInIcon}
       imageAlt="Linkedin Profile"
       link={linkedin}
-      shortLink="jordan-walker-85246458"
+      shortLink="Linkedin"
     />
     <ContactLinkContainer
       icon={GithubIcon}
       imageAlt="Github Profile"
       link={github}
-      shortLink="github.com/jwalker2276"
+      shortLink="Github"
     />
     <ContactLinkContainer
       icon={EmailIcon}
       imageAlt="Email Address"
       link={email}
+      shortLink="Email"
     />
   </StyledPrimaryContactMethod>
 );
