@@ -4,7 +4,10 @@ import PrimaryCallToActionButton from "../../common/buttons/PrimaryCallToAction"
 import SectionHeader from "../common/SectionHeader";
 import PortfolioWorkDisplay from "./PortfolioWorkDisplay";
 
-const StyledPortfolioSection = styled.section``;
+const StyledPortfolioSection = styled.section`
+  padding: var(--page--padding);
+  width: 100%;
+`;
 
 // Onclick event for button
 const primaryActionEvent = (): void => {

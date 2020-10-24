@@ -14,7 +14,10 @@ import ServerIcon from "../../../images/icon-server.svg";
 import SwatchIcon from "../../../images/icon-swatch.svg";
 import TuneIcon from "../../../images/icon-tune.svg";
 
-const StyledSection = styled.section``;
+const StyledSection = styled.section`
+  padding: var(--page--padding);
+  width: 100%;
+`;
 
 // Content for this section
 const rowOneTitle = "Custom Web Application";

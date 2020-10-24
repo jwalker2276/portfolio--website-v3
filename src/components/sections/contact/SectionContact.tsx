@@ -5,7 +5,10 @@ import SectionIntroText from "../common/SectionIntroText";
 import PrimaryContactMethod from "./PrimaryContactMethod";
 import SecondaryContactMethod from "./SecondaryContactMethod";
 
-const StyledSectionContact = styled.section``;
+const StyledSectionContact = styled.section`
+  padding: var(--page--padding);
+  width: 100%;
+`;
 
 const SectionContact = (): JSX.Element => (
   <StyledSectionContact>

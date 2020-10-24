@@ -18,7 +18,10 @@ const primaryActionEvent = (): void => {
   console.log("Clicked hire me");
 };
 
-const StyledAboutSection = styled.section``;
+const StyledAboutSection = styled.section`
+  padding: var(--page--padding);
+  width: 100%;
+`;
 
 const AboutSection = (): JSX.Element => (
   <StyledAboutSection>
