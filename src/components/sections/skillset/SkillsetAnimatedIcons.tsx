@@ -26,7 +26,7 @@ const SkillAnimatedIcons = ({
 }: SkillsetIconProps): JSX.Element => (
   <StyledIconCircle>
     <StyledSkillsetIcon
-      src={iconSources[0]}
+      src={iconSources[1]}
       alt={iconAlt}
       width="40px"
       height="40px"
