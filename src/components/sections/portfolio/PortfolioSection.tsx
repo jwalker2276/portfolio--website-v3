@@ -8,6 +8,10 @@ const StyledPortfolioSection = styled.section`
   padding: var(--page--padding);
   padding-bottom: 128px;
   width: 100%;
+  max-height: 768px;
+  overflow: hidden;
+  display: grid;
+  grid-template: auto 1fr auto;
 `;
 
 // Onclick event for button

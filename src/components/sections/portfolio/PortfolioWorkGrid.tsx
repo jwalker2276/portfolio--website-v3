@@ -8,7 +8,10 @@ import vindecoderImage from "../../../images/vindecoder_ss_1.png";
 import downshiftImage from "../../../images/downshift_ss_1.png";
 import canvasAnimationImage from "../../../images/canvas_animation_ss_1.png";
 
-const StyledPortfolioWorkGrid = styled.div``;
+const StyledPortfolioWorkGrid = styled.div`
+  display: grid;
+  border: 2px solid red;
+`;
 
 const PortfolioWorkGrid = (): JSX.Element => (
   <StyledPortfolioWorkGrid>
