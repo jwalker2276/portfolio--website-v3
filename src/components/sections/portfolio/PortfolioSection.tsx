@@ -8,10 +8,14 @@ const StyledPortfolioSection = styled.section`
   padding: var(--page--padding);
   padding-bottom: 128px;
   width: 100%;
-  max-height: 768px;
-  overflow: hidden;
+  height: 100%;
   display: grid;
-  grid-template: auto 1fr auto;
+  grid-template: auto 1fr auto / 1fr;
+`;
+
+const StyledButtonWrapper = styled.div`
+  margin-top: 79px;
+  justify-self: center;
 `;
 
 // Onclick event for button
@@ -26,10 +30,12 @@ const PortfolioSection = (): JSX.Element => (
       subTitleText="See what I have already built."
     />
     <PortfolioWorkDisplay />
-    <PrimaryCallToActionButton
-      buttonText="Resume"
-      buttonEvent={primaryActionEvent}
-    />
+    <StyledButtonWrapper>
+      <PrimaryCallToActionButton
+        buttonText="Resume"
+        buttonEvent={primaryActionEvent}
+      />
+    </StyledButtonWrapper>
   </StyledPortfolioSection>
 );
 
