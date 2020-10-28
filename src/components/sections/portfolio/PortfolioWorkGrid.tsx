@@ -17,6 +17,8 @@ const StyledPortfolioWorkGrid = styled.div`
 `;
 
 const StyledPortfolioWorkGridMain = styled.div`
+  min-width: 525px;
+  min-height: 329px;
   height: 100%;
   width: 100%;
   display: grid;
@@ -28,6 +30,8 @@ const StyledPortfolioWorkGridMain = styled.div`
 `;
 
 const StyledPortfolioWorkGridOther = styled.div`
+  min-width: 343px;
+  min-height: 216px;
   height: 100%;
   width: 100%;
   display: grid;

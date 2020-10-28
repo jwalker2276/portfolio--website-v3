@@ -35,6 +35,8 @@ const GlobalStyle = createGlobalStyle`
     font-family: "Inter", georgia, serif;
     font-weight: 400;
     font-size: 16px;
+    margin: auto;
+    max-width: 1024px;
     color: var(--neutral--color-000);
   }
 
