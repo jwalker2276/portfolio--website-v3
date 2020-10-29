@@ -5,7 +5,11 @@ type AboutRowTextProps = {
   textToDisplay: string;
 };
 
-const StyledAboutRowText = styled.p``;
+const StyledAboutRowText = styled.p`
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.2;
+`;
 
 const AboutRowText = ({ textToDisplay }: AboutRowTextProps): JSX.Element => (
   <StyledAboutRowText>{textToDisplay}</StyledAboutRowText>
