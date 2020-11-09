@@ -1,12 +1,13 @@
 import React from "react";
 import styled from "styled-components";
+import { useSpring } from "react-spring";
 import SectionHeader from "../common/SectionHeader";
 import AboutRow from "./AboutRow";
 import AboutRowIconsContainer from "./AboutRowIconsContainer";
 import AboutRowText from "./AboutRowText";
 import PrimaryCallToActionButton from "../../common/buttons/PrimaryCallToAction";
 import SectionIntroText from "../common/SectionIntroText";
-import ThreeDIcons from "./ThreeDIcons";
+import ParallaxIconContainer from "./ParallaxIconContainer";
 // Icon files
 import IconCodeTop from "../../../images/code_icon_top.svg";
 import IconCodeMid from "../../../images/code_icon_mid.svg";
@@ -45,52 +46,72 @@ const StyledButtonWrapper = styled.div`
   align-items: center;
 `;
 
-const AboutSection = (): JSX.Element => (
-  <StyledAboutSection>
-    <SectionHeader
-      titleText="Who I am"
-      subTitleText="About my craft and knowledge."
-    />
-    <SectionIntroText displayText="I'm passionate about creating interesting web assets with a strong emphasis on clean code." />
-    <AboutRow>
-      <AboutRowIconsContainer>
-        <ThreeDIcons
-          iconTop={IconEleTop}
-          iconMid={IconEleMid}
-          iconBottom={IconEleBottom}
-          varient="threeLayers"
-        />
-        <ThreeDIcons
-          iconTop={IconCodeTop}
-          iconMid={IconCodeMid}
-          iconBottom={IconCodeBottom}
-          varient="threeLayers"
-        />
-      </AboutRowIconsContainer>
-      <AboutRowText textToDisplay={infoOne} />
-    </AboutRow>
-    <AboutRow>
-      <AboutRowText textToDisplay={infoTwo} />
-      <AboutRowIconsContainer>
-        <ThreeDIcons
-          iconTop={IconBoxesTop}
-          iconBottom={IconBoxesBottom}
-          varient="twoLayers"
-        />
-        <ThreeDIcons
-          iconTop={IconGearsTop}
-          iconBottom={IconGearsBottom}
-          varient="twoLayers"
-        />
-      </AboutRowIconsContainer>
-    </AboutRow>
-    <StyledButtonWrapper>
-      <PrimaryCallToActionButton
-        buttonText="Hire Me"
-        buttonEvent={primaryActionEvent}
+// For animations
+const calc = (x: number, y: number): number[] => [
+  x - window.innerWidth / 2,
+  y - window.innerHeight / 2,
+];
+
+const AboutSection = (): JSX.Element => {
+  // React spring data
+  const [properties, set] = useSpring(() => ({
+    xy: [0, 0],
+    config: { mass: 10, tension: 550, friction: 140 },
+  }));
+
+  return (
+    <StyledAboutSection
+      onMouseMove={({ clientX: x, clientY: y }): void =>
+        set({ xy: calc(x, y) })
+      }
+    >
+      <SectionHeader
+        titleText="Who I am"
+        subTitleText="About my craft and knowledge."
       />
-    </StyledButtonWrapper>
-  </StyledAboutSection>
-);
+      <SectionIntroText displayText="I'm passionate about creating interesting web assets with a strong emphasis on clean code." />
+      <AboutRow>
+        <AboutRowIconsContainer>
+          <ParallaxIconContainer
+            iconTop={IconEleTop}
+            iconBottom={IconEleBottom}
+            varient="threeLayers"
+            properties={properties}
+          />
+          <ParallaxIconContainer
+            iconTop={IconCodeTop}
+            iconBottom={IconCodeBottom}
+            varient="threeLayers"
+            properties={properties}
+          />
+        </AboutRowIconsContainer>
+        <AboutRowText textToDisplay={infoOne} />
+      </AboutRow>
+      <AboutRow>
+        <AboutRowText textToDisplay={infoTwo} />
+        <AboutRowIconsContainer>
+          <ParallaxIconContainer
+            iconTop={IconBoxesTop}
+            iconBottom={IconBoxesBottom}
+            varient="twoLayers"
+            properties={properties}
+          />
+          <ParallaxIconContainer
+            iconTop={IconGearsTop}
+            iconBottom={IconGearsBottom}
+            varient="twoLayers"
+            properties={properties}
+          />
+        </AboutRowIconsContainer>
+      </AboutRow>
+      <StyledButtonWrapper>
+        <PrimaryCallToActionButton
+          buttonText="Hire Me"
+          buttonEvent={primaryActionEvent}
+        />
+      </StyledButtonWrapper>
+    </StyledAboutSection>
+  );
+};
 
 export default AboutSection;
