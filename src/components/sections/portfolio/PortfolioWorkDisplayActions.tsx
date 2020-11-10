@@ -16,7 +16,7 @@ const selectionEvent = (selectionName: string): void => {
   console.log(`Clicked ${selectionName} button`);
 };
 
-// TODO : Stop here working on filtering actions.
+// TODO : Add filtering actions.
 const PortfolioWorkDisplayActions = (): JSX.Element => {
   // const [eventName, setName] = useState("all");
 

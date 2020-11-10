@@ -56,7 +56,7 @@ const AboutSection = (): JSX.Element => {
   // React spring data
   const [properties, set] = useSpring(() => ({
     xy: [0, 0],
-    config: { mass: 10, tension: 550, friction: 140 },
+    config: { mass: 100, tension: 550, friction: 500 },
   }));
 
   return (
@@ -74,12 +74,14 @@ const AboutSection = (): JSX.Element => {
         <AboutRowIconsContainer>
           <ParallaxIconContainer
             iconTop={IconEleTop}
+            iconMid={IconEleMid}
             iconBottom={IconEleBottom}
             varient="threeLayers"
             properties={properties}
           />
           <ParallaxIconContainer
             iconTop={IconCodeTop}
+            iconMid={IconCodeMid}
             iconBottom={IconCodeBottom}
             varient="threeLayers"
             properties={properties}
