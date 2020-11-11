@@ -5,7 +5,10 @@ type UpperFooterMainStatementProps = {
   statementText: string;
 };
 
-const StyledUpperFooterMainStatement = styled.h6``;
+const StyledUpperFooterMainStatement = styled.h6`
+  font-size: 36px;
+  font-weight: 700;
+`;
 
 const UpperFooterMainStatement = ({
   statementText,

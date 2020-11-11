@@ -3,7 +3,12 @@ import styled from "styled-components";
 import BackToTopAction from "./BackToTopAction";
 import CopyrightStatement from "./CopyrightStatement";
 
-const StyledLowerFooter = styled.div``;
+const StyledLowerFooter = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+`;
 
 const LowerFooter = (): JSX.Element => (
   <StyledLowerFooter>
