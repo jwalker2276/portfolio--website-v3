@@ -8,6 +8,7 @@ import AboutRowText from "./AboutRowText";
 import PrimaryCallToActionButton from "../../common/buttons/PrimaryCallToAction";
 import SectionIntroText from "../common/SectionIntroText";
 import ParallaxIconContainer from "./ParallaxIconContainer";
+import AnimatedDiv from "./AnimatedDiv";
 // Icon files
 import IconCodeTop from "../../../images/code_icon_top.svg";
 import IconCodeMid from "../../../images/code_icon_mid.svg";
@@ -52,11 +53,22 @@ const calc = (x: number, y: number): number[] => [
   y - window.innerHeight / 2,
 ];
 
+// React spring functions
+const transTop = (x: number, y: number): string =>
+  `translate3d(${x / 5}px,${y / 5}px,0)`;
+
+const transMid = (x: number, y: number): string =>
+  `translate3d(${x / 7}px,${y / 7}px, 0)`;
+
+const transBottom = (x: number, y: number): string =>
+  `translate3d(${x / 10}px,${y / 10}px,0)`;
+
+//* Component
 const AboutSection = (): JSX.Element => {
   // React spring data
   const [properties, set] = useSpring(() => ({
     xy: [0, 0],
-    config: { mass: 100, tension: 550, friction: 500 },
+    config: { mass: 100, tension: 1550, friction: 500 },
   }));
 
   return (
@@ -72,38 +84,92 @@ const AboutSection = (): JSX.Element => {
       <SectionIntroText displayText="I'm passionate about creating interesting web assets with a strong emphasis on clean code." />
       <AboutRow>
         <AboutRowIconsContainer>
-          <ParallaxIconContainer
-            iconTop={IconEleTop}
-            iconMid={IconEleMid}
-            iconBottom={IconEleBottom}
-            varient="threeLayers"
-            properties={properties}
-          />
-          <ParallaxIconContainer
-            iconTop={IconCodeTop}
-            iconMid={IconCodeMid}
-            iconBottom={IconCodeBottom}
-            varient="threeLayers"
-            properties={properties}
-          />
+          <ParallaxIconContainer offsetX="-75" offsetY="-50">
+            <AnimatedDiv
+              transformFunc={transTop}
+              bkgimg={IconEleBottom}
+              properties={properties}
+              eleheight="250"
+              elewidth="250"
+            />
+            <AnimatedDiv
+              transformFunc={transMid}
+              bkgimg={IconEleMid}
+              properties={properties}
+              eleheight="250"
+              elewidth="250"
+            />
+            <AnimatedDiv
+              transformFunc={transBottom}
+              bkgimg={IconEleTop}
+              properties={properties}
+              eleheight="250"
+              elewidth="250"
+            />
+          </ParallaxIconContainer>
+          <ParallaxIconContainer offsetX="0" offsetY="0">
+            <AnimatedDiv
+              transformFunc={transTop}
+              bkgimg={IconCodeBottom}
+              properties={properties}
+              eleheight="250"
+              elewidth="250"
+            />
+            <AnimatedDiv
+              transformFunc={transMid}
+              bkgimg={IconCodeMid}
+              properties={properties}
+              eleheight="250"
+              elewidth="250"
+            />
+            <AnimatedDiv
+              transformFunc={transBottom}
+              bkgimg={IconCodeTop}
+              properties={properties}
+              eleheight="250"
+              elewidth="250"
+            />
+          </ParallaxIconContainer>
         </AboutRowIconsContainer>
         <AboutRowText textToDisplay={infoOne} />
       </AboutRow>
       <AboutRow>
         <AboutRowText textToDisplay={infoTwo} />
         <AboutRowIconsContainer>
-          <ParallaxIconContainer
-            iconTop={IconBoxesTop}
-            iconBottom={IconBoxesBottom}
-            varient="twoLayers"
-            properties={properties}
-          />
-          <ParallaxIconContainer
-            iconTop={IconGearsTop}
-            iconBottom={IconGearsBottom}
-            varient="twoLayers"
-            properties={properties}
-          />
+          <ParallaxIconContainer offsetX="-75" offsetY="-50">
+            <AnimatedDiv
+              transformFunc={transTop}
+              bkgimg={IconBoxesBottom}
+              properties={properties}
+              eleheight="250"
+              elewidth="250"
+            />
+
+            <AnimatedDiv
+              transformFunc={transBottom}
+              bkgimg={IconBoxesTop}
+              properties={properties}
+              eleheight="250"
+              elewidth="250"
+            />
+          </ParallaxIconContainer>
+          <ParallaxIconContainer offsetX="0" offsetY="0">
+            <AnimatedDiv
+              transformFunc={transTop}
+              bkgimg={IconGearsBottom}
+              properties={properties}
+              eleheight="250"
+              elewidth="250"
+            />
+
+            <AnimatedDiv
+              transformFunc={transBottom}
+              bkgimg={IconGearsTop}
+              properties={properties}
+              eleheight="250"
+              elewidth="250"
+            />
+          </ParallaxIconContainer>
         </AboutRowIconsContainer>
       </AboutRow>
       <StyledButtonWrapper>
