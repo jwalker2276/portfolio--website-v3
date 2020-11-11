@@ -8,7 +8,7 @@ type AboutRowTextProps = {
 const StyledAboutRowText = styled.p`
   font-size: 16px;
   font-weight: 400;
-  line-height: 1.2;
+  line-height: 1.5;
 `;
 
 const AboutRowText = ({ textToDisplay }: AboutRowTextProps): JSX.Element => (

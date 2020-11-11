@@ -84,50 +84,50 @@ const AboutSection = (): JSX.Element => {
       <SectionIntroText displayText="I'm passionate about creating interesting web assets with a strong emphasis on clean code." />
       <AboutRow>
         <AboutRowIconsContainer>
-          <ParallaxIconContainer offsetX="-75" offsetY="-50">
+          <ParallaxIconContainer offsetX="-50" offsetY="25">
             <AnimatedDiv
-              transformFunc={transTop}
+              transformFunc={transBottom}
               bkgimg={IconEleBottom}
               properties={properties}
-              eleheight="250"
-              elewidth="250"
+              eleheight="150"
+              elewidth="150"
             />
             <AnimatedDiv
               transformFunc={transMid}
               bkgimg={IconEleMid}
               properties={properties}
-              eleheight="250"
-              elewidth="250"
+              eleheight="75"
+              elewidth="75"
             />
-            <AnimatedDiv
-              transformFunc={transBottom}
-              bkgimg={IconEleTop}
-              properties={properties}
-              eleheight="250"
-              elewidth="250"
-            />
-          </ParallaxIconContainer>
-          <ParallaxIconContainer offsetX="0" offsetY="0">
             <AnimatedDiv
               transformFunc={transTop}
+              bkgimg={IconEleTop}
+              properties={properties}
+              eleheight="50"
+              elewidth="50"
+            />
+          </ParallaxIconContainer>
+          <ParallaxIconContainer offsetX="50" offsetY="-25">
+            <AnimatedDiv
+              transformFunc={transBottom}
               bkgimg={IconCodeBottom}
               properties={properties}
-              eleheight="250"
-              elewidth="250"
+              eleheight="150"
+              elewidth="150"
             />
             <AnimatedDiv
               transformFunc={transMid}
               bkgimg={IconCodeMid}
               properties={properties}
-              eleheight="250"
-              elewidth="250"
+              eleheight="75"
+              elewidth="75"
             />
             <AnimatedDiv
-              transformFunc={transBottom}
+              transformFunc={transTop}
               bkgimg={IconCodeTop}
               properties={properties}
-              eleheight="250"
-              elewidth="250"
+              eleheight="50"
+              elewidth="50"
             />
           </ParallaxIconContainer>
         </AboutRowIconsContainer>
@@ -136,38 +136,36 @@ const AboutSection = (): JSX.Element => {
       <AboutRow>
         <AboutRowText textToDisplay={infoTwo} />
         <AboutRowIconsContainer>
-          <ParallaxIconContainer offsetX="-75" offsetY="-50">
+          <ParallaxIconContainer offsetX="-50" offsetY="50">
             <AnimatedDiv
-              transformFunc={transTop}
+              transformFunc={transBottom}
               bkgimg={IconBoxesBottom}
               properties={properties}
-              eleheight="250"
-              elewidth="250"
+              eleheight="150"
+              elewidth="150"
             />
-
-            <AnimatedDiv
-              transformFunc={transBottom}
-              bkgimg={IconBoxesTop}
-              properties={properties}
-              eleheight="250"
-              elewidth="250"
-            />
-          </ParallaxIconContainer>
-          <ParallaxIconContainer offsetX="0" offsetY="0">
             <AnimatedDiv
               transformFunc={transTop}
-              bkgimg={IconGearsBottom}
+              bkgimg={IconBoxesTop}
               properties={properties}
-              eleheight="250"
-              elewidth="250"
+              eleheight="75"
+              elewidth="75"
             />
-
+          </ParallaxIconContainer>
+          <ParallaxIconContainer offsetX="50" offsetY="-50">
             <AnimatedDiv
               transformFunc={transBottom}
+              bkgimg={IconGearsBottom}
+              properties={properties}
+              eleheight="150"
+              elewidth="150"
+            />
+            <AnimatedDiv
+              transformFunc={transTop}
               bkgimg={IconGearsTop}
               properties={properties}
-              eleheight="250"
-              elewidth="250"
+              eleheight="75"
+              elewidth="75"
             />
           </ParallaxIconContainer>
         </AboutRowIconsContainer>

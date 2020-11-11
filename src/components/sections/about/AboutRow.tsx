@@ -7,7 +7,7 @@ type AboutSectionRowProps = {
 
 const StyledAboutRow = styled.div`
   display: grid;
-  grid-template: 1fr / 1fr 1fr;
+  grid-template: 384px / 1fr 1fr;
   column-gap: 128px;
   justify-items: center;
   align-items: center;
