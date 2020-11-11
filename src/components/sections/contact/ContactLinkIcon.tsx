@@ -6,7 +6,11 @@ type ContactLinkIconProps = {
   imageAlt: string;
 };
 
-const StyledContactLinkIcon = styled.img``;
+const StyledContactLinkIcon = styled.img`
+  margin-right: 48px;
+  width: 24px;
+  height: auto;
+`;
 
 const ContactLinkIcon = ({
   icon,

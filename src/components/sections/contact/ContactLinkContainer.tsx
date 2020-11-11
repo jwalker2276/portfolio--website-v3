@@ -10,8 +10,13 @@ type ContactLinkContainerProps = {
   link: string;
 };
 
-const StyledContactLinkContainer = styled.a``;
-
+const StyledContactLinkContainer = styled.a`
+  text-decoration: none;
+  color: var(--neut--color-000);
+  font-weight: 500;
+  font-size: 16px;
+  width: 100%;
+`;
 const ContactLinkContainer = ({
   shortLink,
   icon,

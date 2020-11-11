@@ -11,7 +11,15 @@ const linkedin = "https://www.linkedin.com/in/jordan-walker-85246458/";
 const github = "https://github.com/jwalker2276";
 const email = "jwalkercreations@gmail.com";
 
-const StyledPrimaryContactMethod = styled.div``;
+const StyledPrimaryContactMethod = styled.div`
+  margin: 128px 0 0 0;
+  display: grid;
+  grid-template: repeat(3, 1fr) / 1fr;
+  justify-items: left;
+  align-items: center;
+  row-gap: 64px;
+  width: 192px;
+`;
 
 const PrimaryContactMethod = (): JSX.Element => (
   <StyledPrimaryContactMethod>

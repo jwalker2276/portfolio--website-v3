@@ -6,7 +6,10 @@ type ContactLinkTextProps = {
   link: string;
 };
 
-const StyledContactLinkText = styled.p``;
+const StyledContactLinkText = styled.p`
+  display: inline-block;
+  font-size: 20px;
+`;
 
 const ContactLinkText = ({
   shortLink,
