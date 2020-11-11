@@ -1,17 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 import ContactLinkIcon from "./ContactLinkIcon";
-import ContactLinkText from "./ContactLinkText";
+import ContactText from "./ContactText";
 
-type ContactLinkContainerProps = {
+type ContactTextContainerProps = {
   shortLink?: string;
   icon: string;
   imageAlt: string;
-  link: string;
 };
 
-const StyledContactLinkContainer = styled.a`
-  text-decoration: none;
+const StyledContactTextContainer = styled.div`
   color: var(--neut--color-000);
   font-weight: 500;
   font-size: 16px;
@@ -21,16 +19,11 @@ const ContactLinkContainer = ({
   shortLink,
   icon,
   imageAlt,
-  link,
-}: ContactLinkContainerProps): JSX.Element => (
-  <StyledContactLinkContainer
-    href={link}
-    rel="noreferrer nopener"
-    target="_blank"
-  >
+}: ContactTextContainerProps): JSX.Element => (
+  <StyledContactTextContainer>
     <ContactLinkIcon icon={icon} imageAlt={imageAlt} />
-    <ContactLinkText shortLink={shortLink} link={link} />
-  </StyledContactLinkContainer>
+    <ContactText text={shortLink} />
+  </StyledContactTextContainer>
 );
 
 export default ContactLinkContainer;

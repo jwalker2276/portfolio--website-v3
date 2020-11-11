@@ -5,6 +5,7 @@ import LinkedInIcon from "../../../images/icon-linkedin.svg";
 import GithubIcon from "../../../images/icon-github.svg";
 import EmailIcon from "../../../images/icon-email.svg";
 import ContactLinkContainer from "./ContactLinkContainer";
+import ContactTextContainer from "./ContactTextContainer";
 
 // Links
 const linkedin = "https://www.linkedin.com/in/jordan-walker-85246458/";
@@ -18,7 +19,7 @@ const StyledPrimaryContactMethod = styled.div`
   justify-items: left;
   align-items: center;
   row-gap: 64px;
-  width: 192px;
+  width: 384px;
 `;
 
 const PrimaryContactMethod = (): JSX.Element => (
@@ -35,11 +36,10 @@ const PrimaryContactMethod = (): JSX.Element => (
       link={github}
       shortLink="Github"
     />
-    <ContactLinkContainer
+    <ContactTextContainer
       icon={EmailIcon}
       imageAlt="Email Address"
-      link={email}
-      shortLink="Email"
+      shortLink={email}
     />
   </StyledPrimaryContactMethod>
 );
