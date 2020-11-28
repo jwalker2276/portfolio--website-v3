@@ -42,6 +42,7 @@ const GlobalStyle = createGlobalStyle`
     margin: auto;
     max-width: 1024px;
     color: var(--neutral--color-000);
+    overflow-x: hidden;
   }
 
   * {
