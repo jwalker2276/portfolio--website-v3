@@ -3,8 +3,15 @@ import styled from "styled-components";
 import PrimaryHeading from "./PrimaryHeading";
 import SecondaryHeading from "./SecondaryHeading";
 import PrimaryCallToAction from "../../common/buttons/PrimaryCallToAction";
+import BorderImageHero from "./BorderImageHero";
 
-const StyledHeroSection = styled.section`
+import bkImage from "../../../images/hero_bk.png";
+
+type SectionProps = {
+  backgroundImage: string;
+};
+
+const StyledHeroSection = styled.section<SectionProps>`
   padding: var(--page--padding);
   width: 100%;
   height: 100vh;
@@ -12,6 +19,9 @@ const StyledHeroSection = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: start;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(${({ backgroundImage }): string => backgroundImage});
 `;
 
 // Onclick event for button
@@ -20,7 +30,8 @@ const primaryActionEvent = (): void => {
 };
 
 const HeroSection = (): JSX.Element => (
-  <StyledHeroSection>
+  <StyledHeroSection backgroundImage={bkImage}>
+    <BorderImageHero />
     <SecondaryHeading />
     <PrimaryHeading />
     <PrimaryCallToAction

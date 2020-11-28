@@ -5,6 +5,7 @@ import SectionHeader from "../common/SectionHeader";
 import SkillsetRow from "./SkillsetRow";
 import SkillsetRowIconsContainer from "./SkillsetRowIconsContainer";
 import SkillsetRowTextContainer from "./SkillsetRowTextContainer";
+import BorderImageSkillset from "./BorderImageSkillset";
 // Icons
 import ApplicationIcon from "../../../images/icon-application.svg";
 import CodeIcon from "../../../images/icon-code.svg";
@@ -28,6 +29,7 @@ const rowThreeText =
   "Already have an existing site but need new features? I can develop new features to work with your existing codebase.";
 
 const StyledSection = styled.section`
+  position: relative;
   padding: var(--page--padding);
   padding-bottom: 128px;
   width: 100%;
@@ -44,6 +46,7 @@ const primaryActionEvent = (): void => {
 
 const SkillsetSection = (): JSX.Element => (
   <StyledSection>
+    <BorderImageSkillset />
     <SectionHeader
       titleText="What I Do"
       subTitleText="I create visually appealing apps with clean code."

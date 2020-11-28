@@ -9,6 +9,7 @@ import PrimaryCallToActionButton from "../../common/buttons/PrimaryCallToAction"
 import SectionIntroText from "../common/SectionIntroText";
 import ParallaxIconContainer from "./ParallaxIconContainer";
 import AnimatedDiv from "./AnimatedDiv";
+import BorderImageAbout from "./BorderImageAbout";
 // Icon files
 import IconCodeTop from "../../../images/code_icon_top.svg";
 import IconCodeMid from "../../../images/code_icon_mid.svg";
@@ -36,6 +37,7 @@ const primaryActionEvent = (): void => {
 };
 
 const StyledAboutSection = styled.section`
+  position: relative;
   padding: var(--page--padding);
   padding-bottom: 128px;
   width: 100%;
@@ -77,6 +79,7 @@ const AboutSection = (): JSX.Element => {
         set({ xy: calc(x, y) })
       }
     >
+      <BorderImageAbout />
       <SectionHeader
         titleText="Who I am"
         subTitleText="About my craft and knowledge."
