@@ -7,6 +7,8 @@ import Footer from "../footer/Footer";
 import "typeface-inter";
 // Normalize
 import { normalize } from "styled-normalize";
+// Image
+import backgroundPattern from "../../images/stardust.png";
 
 const GlobalStyle = createGlobalStyle`
   /* Normalize css styles */
@@ -43,6 +45,7 @@ const GlobalStyle = createGlobalStyle`
     max-width: 1024px;
     color: var(--neutral--color-000);
     overflow-x: hidden;
+    background-image: url(${backgroundPattern});
   }
 
   * {
