@@ -24,7 +24,7 @@ const NavWrapper = (): JSX.Element => {
   };
 
   return (
-    <StyledNavWrapper>
+    <StyledNavWrapper id="nav">
       <Logo />
       <MenuButton onClickEvent={showNavPanel} />
       {showNav && <NavActions />}

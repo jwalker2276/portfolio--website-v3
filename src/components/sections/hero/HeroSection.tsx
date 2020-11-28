@@ -30,7 +30,7 @@ const primaryActionEvent = (): void => {
 };
 
 const HeroSection = (): JSX.Element => (
-  <StyledHeroSection backgroundImage={bkImage}>
+  <StyledHeroSection backgroundImage={bkImage} id="hero">
     <BorderImageHero />
     <SecondaryHeading />
     <PrimaryHeading />

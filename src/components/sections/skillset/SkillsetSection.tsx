@@ -45,7 +45,7 @@ const primaryActionEvent = (): void => {
 };
 
 const SkillsetSection = (): JSX.Element => (
-  <StyledSection>
+  <StyledSection id="skillset">
     <BorderImageSkillset />
     <SectionHeader
       titleText="What I Do"

@@ -29,6 +29,10 @@ const GlobalStyle = createGlobalStyle`
     /* Spacing */
     --page--padding: 0px 0px;
   }
+
+  html {
+    scroll-behavior: smooth;
+  }
   
   body {
     background-color: var(--neutral--color-900);

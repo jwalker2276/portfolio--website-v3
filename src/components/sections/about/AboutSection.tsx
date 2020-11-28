@@ -78,6 +78,7 @@ const AboutSection = (): JSX.Element => {
       onMouseMove={({ clientX: x, clientY: y }): void =>
         set({ xy: calc(x, y) })
       }
+      id="about"
     >
       <BorderImageAbout />
       <SectionHeader

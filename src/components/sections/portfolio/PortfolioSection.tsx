@@ -24,7 +24,7 @@ const primaryActionEvent = (): void => {
 };
 
 const PortfolioSection = (): JSX.Element => (
-  <StyledPortfolioSection>
+  <StyledPortfolioSection id="portfolio">
     <SectionHeader
       titleText="Portfolio"
       subTitleText="See what I have already built."

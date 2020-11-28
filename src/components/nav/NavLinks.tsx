@@ -13,10 +13,10 @@ const StyledNavLinks = styled.nav`
 
 const NavLinks = (): JSX.Element => (
   <StyledNavLinks>
-    <NavButton buttonText="Skillset" />
-    <NavButton buttonText="Portfolio" />
-    <NavButton buttonText="About" />
-    <NavButton buttonText="Contact" />
+    <NavButton buttonText="Skillset" sectionId="#skillset" />
+    <NavButton buttonText="Portfolio" sectionId="#portfolio" />
+    <NavButton buttonText="About" sectionId="#about" />
+    <NavButton buttonText="Contact" sectionId="#contact" />
   </StyledNavLinks>
 );
 

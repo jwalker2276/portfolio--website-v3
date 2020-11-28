@@ -13,7 +13,7 @@ const StyledSectionContact = styled.section`
 `;
 
 const SectionContact = (): JSX.Element => (
-  <StyledSectionContact>
+  <StyledSectionContact id="contact">
     <BackgroundImages />
     <SectionHeader titleText="Say Hello" subTitleText="Let's Work Together." />
     <SectionIntroText displayText="I'd love to meet with you to discuss your ideas and potential collaborations." />
