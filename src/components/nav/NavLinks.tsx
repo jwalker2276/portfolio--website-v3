@@ -2,6 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import NavButton from "./NavButton";
 
+type NavLinksProps = {
+  varient?: string;
+};
+
 const StyledNavLinks = styled.nav`
   display: grid;
   justify-items: left;
@@ -11,13 +15,33 @@ const StyledNavLinks = styled.nav`
   padding-right: 18px;
 `;
 
-const NavLinks = (): JSX.Element => (
-  <StyledNavLinks>
-    <NavButton buttonText="Skillset" sectionId="skillset" />
-    <NavButton buttonText="Portfolio" sectionId="portfolio" />
-    <NavButton buttonText="About" sectionId="about" />
-    <NavButton buttonText="Contact" sectionId="contact" />
-  </StyledNavLinks>
-);
+const StyledNavLinksTop = styled.nav`
+  display: grid;
+  grid-template: 1fr / 1fr 1fr 1fr 1fr;
+  align-items: center;
+  column-gap: 24px;
+`;
+
+const NavLinks = ({ varient }: NavLinksProps): JSX.Element => {
+  if (varient === "top nav") {
+    return (
+      <StyledNavLinksTop>
+        <NavButton buttonText="Skillset" sectionId="skillset" />
+        <NavButton buttonText="Portfolio" sectionId="portfolio" />
+        <NavButton buttonText="About" sectionId="about" />
+        <NavButton buttonText="Contact" sectionId="contact" />
+      </StyledNavLinksTop>
+    );
+  } else {
+    return (
+      <StyledNavLinks>
+        <NavButton buttonText="Skillset" sectionId="skillset" />
+        <NavButton buttonText="Portfolio" sectionId="portfolio" />
+        <NavButton buttonText="About" sectionId="about" />
+        <NavButton buttonText="Contact" sectionId="contact" />
+      </StyledNavLinks>
+    );
+  }
+};
 
 export default NavLinks;

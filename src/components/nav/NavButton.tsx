@@ -15,6 +15,7 @@ const StyledNavButton = styled(Link)`
   cursor: pointer;
   padding: 4px 0;
   text-decoration: none;
+  text-align: center;
 `;
 
 const NavButton = ({ buttonText, sectionId }: NavButtonProps): JSX.Element => (

@@ -2,10 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import MenuButtonAccent from "./MenuButtonAccent";
 
-type MenuButtonProps = {
-  onClickEvent: () => void;
-};
-
 const StyledMenuButtonWrapper = styled.div`
   display: flex;
   flex-direction: row;
@@ -20,11 +16,12 @@ const StyledMenuButton = styled.button`
   border: none;
   color: var(--primary--color-100);
   padding-right: 4px;
+  cursor: pointer;
 `;
 
-const MenuButton = ({ onClickEvent }: MenuButtonProps): JSX.Element => (
+const MenuButton = (): JSX.Element => (
   <StyledMenuButtonWrapper>
-    <StyledMenuButton onClick={onClickEvent}>Explore</StyledMenuButton>
+    <StyledMenuButton>Explore</StyledMenuButton>
     <MenuButtonAccent />
   </StyledMenuButtonWrapper>
 );
