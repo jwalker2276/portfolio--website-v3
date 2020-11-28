@@ -18,11 +18,6 @@ const StyledButtonWrapper = styled.div`
   justify-self: center;
 `;
 
-// Onclick event for button
-const primaryActionEvent = (): void => {
-  console.log("Clicked resume");
-};
-
 const PortfolioSection = (): JSX.Element => (
   <StyledPortfolioSection id="portfolio">
     <SectionHeader
@@ -31,10 +26,7 @@ const PortfolioSection = (): JSX.Element => (
     />
     <PortfolioWorkDisplay />
     <StyledButtonWrapper>
-      <PrimaryCallToActionButton
-        buttonText="Resume"
-        buttonEvent={primaryActionEvent}
-      />
+      <PrimaryCallToActionButton buttonText="Resume" buttonType="link" />
     </StyledButtonWrapper>
   </StyledPortfolioSection>
 );
