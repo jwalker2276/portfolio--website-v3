@@ -12,6 +12,7 @@ type WorkDisplayInfoProps = {
 };
 
 const StyledWorkDisplayInfo = styled(animated.div)`
+  position: absolute;
   background-color: var(--neutral--color-800);
   height: 100%;
   width: 100%;

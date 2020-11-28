@@ -8,6 +8,7 @@ type WorkDisplayImageProps = {
 };
 
 const StyledWorkDisplayImage = styled(animated.div)<WorkDisplayImageProps>`
+  position: absolute;
   min-width: 343px;
   min-height: 216px;
   width: 100%;

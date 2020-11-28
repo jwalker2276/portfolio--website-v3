@@ -16,6 +16,7 @@ type WorkDisplayProps = {
 
 const StyledWorkDisplay = styled.div<Pick<WorkDisplayProps, "gridArea">>`
   grid-area: ${(props): string => props.gridArea};
+  position: relative;
 `;
 
 const WorkDisplay = ({
@@ -29,6 +30,9 @@ const WorkDisplay = ({
   // Pages for react spring
   const pages = [
     ({ style }): JSX.Element => (
+      <WorkDisplayImage imagesource={imagesource} style={{ ...style }} />
+    ),
+    ({ style }): JSX.Element => (
       <WorkDisplayInfo
         linkToProject={linkToProject}
         linkToCode={linkToCode}
@@ -36,9 +40,6 @@ const WorkDisplay = ({
         projectType={projectType}
         style={{ ...style }}
       />
-    ),
-    ({ style }): JSX.Element => (
-      <WorkDisplayImage imagesource={imagesource} style={{ ...style }} />
     ),
   ];
 
