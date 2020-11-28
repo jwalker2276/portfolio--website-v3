@@ -12,7 +12,7 @@ const StyledBackToTopAction = styled.a`
 `;
 
 const BackToTopAction = (): JSX.Element => (
-  <StyledBackToTopAction href="#hero">Back to top</StyledBackToTopAction>
+  <StyledBackToTopAction href="#nav">Back to top</StyledBackToTopAction>
 );
 
 export default BackToTopAction;
