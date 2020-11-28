@@ -10,6 +10,7 @@ const StyledSectionIntroText = styled.p`
   color: var(--neutral--color-000);
   font-weight: 500;
   max-width: 363px;
+  line-height: 1.4;
 `;
 
 const SectionIntroText = ({

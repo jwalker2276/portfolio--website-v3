@@ -7,7 +7,7 @@ type SkillsetRowTextProps = {
 
 const StyledSkillsetRowText = styled.p`
   max-width: 384px;
-  line-height: 1.2;
+  line-height: 1.4;
 `;
 
 const SkillsetRowText = ({ text }: SkillsetRowTextProps): JSX.Element => (
