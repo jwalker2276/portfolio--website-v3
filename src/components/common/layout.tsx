@@ -27,7 +27,8 @@ const GlobalStyle = createGlobalStyle`
     --neutral--color-500: #616e7c;
     --neutral--color-800: #323f4b;
     --neutral--color-900: #1f2933;
-
+    /* Shadows */
+    --shadow--color-500: rgba(31, 41, 51, .5);
     /* Spacing */
     --page--padding: 0px 0px;
   }

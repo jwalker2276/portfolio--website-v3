@@ -47,15 +47,16 @@ const PortfolioWorkGrid = (): JSX.Element => (
   <StyledPortfolioWorkGrid>
     <StyledPortfolioWorkGridMain>
       <WorkDisplay
-        imageSource={rateTeamMateImage}
+        imagesource={rateTeamMateImage}
         linkToProject="https://www.teammateme.com/"
         projectName="RateTeamMate"
         projectType="Full Stack Web Application"
         gridArea="mainOne"
       />
       <WorkDisplay
-        imageSource={downshiftImage}
+        imagesource={downshiftImage}
         linkToProject="https://downshift-demo.netlify.app"
+        linkToCode="https://github.com/jwalker2276/gatsby-site-demo"
         projectName="Downshift"
         projectType="Web Site"
         gridArea="mainTwo"
@@ -63,21 +64,23 @@ const PortfolioWorkGrid = (): JSX.Element => (
     </StyledPortfolioWorkGridMain>
     <StyledPortfolioWorkGridOther>
       <WorkDisplay
-        imageSource={vindecoderImage}
+        imagesource={vindecoderImage}
         linkToProject="https://www.vindecodeapp.com/"
+        linkToCode="https://github.com/jwalker2276/vinDecode"
         projectName="Vindecoder"
         projectType="Web Application"
         gridArea="otherOne"
       />
       <WorkDisplay
-        imageSource={devlistImage}
+        imagesource={devlistImage}
         linkToProject="https://www.devlistapp.com/"
+        linkToCode="https://github.com/jwalker2276/devList"
         projectName="DevList"
         projectType="Web Application"
         gridArea="otherTwo"
       />
       <WorkDisplay
-        imageSource={canvasAnimationImage}
+        imagesource={canvasAnimationImage}
         linkToProject="https://www.jwalkercreations.com/"
         projectName="Landing Page Animation"
         projectType="Canvas Animation"
