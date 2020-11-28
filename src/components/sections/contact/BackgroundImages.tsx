@@ -11,7 +11,7 @@ type BackgroundImagesProps = {
 const StyledBackgroundImageTop = styled.div<BackgroundImagesProps>`
   position: absolute;
   right: 50px;
-  top: 100px;
+  top: 0px;
   width: 400px;
   height: 400px;
   background-size: cover;

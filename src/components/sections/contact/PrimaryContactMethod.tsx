@@ -13,7 +13,6 @@ const github = "https://github.com/jwalker2276";
 const email = "jwalkercreations@gmail.com";
 
 const StyledPrimaryContactMethod = styled.div`
-  margin: 128px 0 0 0;
   display: grid;
   grid-template: repeat(3, 1fr) / 1fr;
   justify-items: left;
