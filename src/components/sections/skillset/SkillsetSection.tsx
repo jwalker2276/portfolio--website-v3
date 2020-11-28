@@ -6,6 +6,7 @@ import SkillsetRow from "./SkillsetRow";
 import SkillsetRowIconsContainer from "./SkillsetRowIconsContainer";
 import SkillsetRowTextContainer from "./SkillsetRowTextContainer";
 import BorderImageSkillset from "./BorderImageSkillset";
+import { animateScroll } from "react-scroll";
 // Icons
 import ApplicationIcon from "../../../images/icon-application.svg";
 import CodeIcon from "../../../images/icon-code.svg";
@@ -41,7 +42,7 @@ const StyledSection = styled.section`
 
 // Onclick event for button
 const primaryActionEvent = (): void => {
-  console.log("Clicked hire me");
+  animateScroll.scrollToBottom({ smooth: "easeOutQuint", duration: 250 });
 };
 
 const SkillsetSection = (): JSX.Element => (

@@ -10,6 +10,7 @@ import SectionIntroText from "../common/SectionIntroText";
 import ParallaxIconContainer from "./ParallaxIconContainer";
 import AnimatedDiv from "./AnimatedDiv";
 import BorderImageAbout from "./BorderImageAbout";
+import { animateScroll } from "react-scroll";
 // Icon files
 import IconCodeTop from "../../../images/code_icon_top.svg";
 import IconCodeMid from "../../../images/code_icon_mid.svg";
@@ -33,7 +34,7 @@ const infoTwo =
 
 // Onclick event for button
 const primaryActionEvent = (): void => {
-  console.log("Clicked hire me");
+  animateScroll.scrollToBottom({ smooth: "easeOutQuint", duration: 250 });
 };
 
 const StyledAboutSection = styled.section`

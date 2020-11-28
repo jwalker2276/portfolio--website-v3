@@ -4,6 +4,7 @@ import PrimaryHeading from "./PrimaryHeading";
 import SecondaryHeading from "./SecondaryHeading";
 import PrimaryCallToAction from "../../common/buttons/PrimaryCallToAction";
 import BorderImageHero from "./BorderImageHero";
+import { animateScroll } from "react-scroll";
 
 import bkImage from "../../../images/hero_bk.png";
 
@@ -26,7 +27,7 @@ const StyledHeroSection = styled.section<SectionProps>`
 
 // Onclick event for button
 const primaryActionEvent = (): void => {
-  console.log("Clicked lets talk");
+  animateScroll.scrollToBottom({ smooth: "easeOutQuint", duration: 250 });
 };
 
 const HeroSection = (): JSX.Element => (

@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-scroll";
 
-const StyledBackToTopAction = styled.a`
+const StyledBackToTopAction = styled(Link)`
   background-color: rgba(0, 0, 0, 0);
   border: none;
   color: var(--neut--color-000);
@@ -12,7 +13,9 @@ const StyledBackToTopAction = styled.a`
 `;
 
 const BackToTopAction = (): JSX.Element => (
-  <StyledBackToTopAction href="#nav">Back to top</StyledBackToTopAction>
+  <StyledBackToTopAction to="nav" smooth="easeOutQuint" duration={250}>
+    Back to top
+  </StyledBackToTopAction>
 );
 
 export default BackToTopAction;

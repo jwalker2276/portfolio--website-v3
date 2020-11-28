@@ -11,7 +11,7 @@ const StyledNavWrapper = styled.header`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 0 24px;
+  padding: 0 0px;
 `;
 
 const NavWrapper = (): JSX.Element => {
