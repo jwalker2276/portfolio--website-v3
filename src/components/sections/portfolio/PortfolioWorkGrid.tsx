@@ -3,10 +3,10 @@ import styled from "styled-components";
 import WorkDisplay from "./WorkDisplay";
 // Images
 import rateTeamMateImage from "../../../images/rtm_ss_1.png";
-import portfolioSiteImage from "../../../images/portfolio_ss_1.png";
 import vindecoderImage from "../../../images/vindecoder_ss_1.png";
 import downshiftImage from "../../../images/downshift_ss_1.png";
 import canvasAnimationImage from "../../../images/canvas_animation_ss_1.png";
+import devlistImage from "../../../images/devlist_ss_1.png";
 
 const StyledPortfolioWorkGrid = styled.div`
   height: 100%;
@@ -48,37 +48,37 @@ const PortfolioWorkGrid = (): JSX.Element => (
     <StyledPortfolioWorkGridMain>
       <WorkDisplay
         imageSource={rateTeamMateImage}
-        linkToProject="https://www.jordanwalker.dev"
+        linkToProject="https://www.teammateme.com/"
         projectName="RateTeamMate"
         projectType="Full Stack Web Application"
         gridArea="mainOne"
       />
       <WorkDisplay
-        imageSource={portfolioSiteImage}
-        linkToProject="https://www.jordanwalker.dev"
-        projectName="Portfolio Web Site CMS"
-        projectType="Full Stack Web Site"
+        imageSource={downshiftImage}
+        linkToProject="https://downshift-demo.netlify.app"
+        projectName="Downshift"
+        projectType="Web Site"
         gridArea="mainTwo"
       />
     </StyledPortfolioWorkGridMain>
     <StyledPortfolioWorkGridOther>
       <WorkDisplay
         imageSource={vindecoderImage}
-        linkToProject="https://www.jordanwalker.dev"
+        linkToProject="https://www.vindecodeapp.com/"
         projectName="Vindecoder"
         projectType="Web Application"
         gridArea="otherOne"
       />
       <WorkDisplay
-        imageSource={downshiftImage}
-        linkToProject="https://www.jordanwalker.dev"
-        projectName="Downshift"
-        projectType="Web Site"
+        imageSource={devlistImage}
+        linkToProject="https://www.devlistapp.com/"
+        projectName="DevList"
+        projectType="Web Application"
         gridArea="otherTwo"
       />
       <WorkDisplay
         imageSource={canvasAnimationImage}
-        linkToProject="https://www.jordanwalker.dev"
+        linkToProject="https://www.jwalkercreations.com/"
         projectName="Landing Page Animation"
         projectType="Canvas Animation"
         gridArea="otherThree"

@@ -27,7 +27,7 @@ const GlobalStyle = createGlobalStyle`
     --neutral--color-900: #1f2933;
 
     /* Spacing */
-    --page--padding: 0 72px;
+    --page--padding: 0px 0px;
   }
   
   body {
