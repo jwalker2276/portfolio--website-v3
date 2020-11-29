@@ -20,6 +20,7 @@ const StyledRowIconsContainer = styled.div`
 
   @media ${device.mobileL} {
     max-width: 100%;
+    grid-template: auto / auto 1fr auto;
   }
 `;
 

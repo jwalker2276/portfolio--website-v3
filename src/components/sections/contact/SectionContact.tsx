@@ -5,6 +5,7 @@ import SectionIntroText from "../common/SectionIntroText";
 import PrimaryContactMethod from "./PrimaryContactMethod";
 import SecondaryContactMethod from "./SecondaryContactMethod";
 import BackgroundImages from "./BackgroundImages";
+import { device } from "../../../breakpoints";
 
 const StyledSectionContact = styled.section`
   position: relative;
@@ -18,6 +19,10 @@ const StyledSectionContactMethods = styled.div`
   grid-template: 1fr / 1fr 1fr;
   align-items: start;
   margin: 128px 0 0 0;
+
+  @media ${device.tablet} {
+    grid-template: 1fr 1fr / 1fr;
+  }
 `;
 
 const SectionContact = (): JSX.Element => (

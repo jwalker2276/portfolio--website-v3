@@ -8,7 +8,7 @@ const StyledCopyrightStatement = styled.p`
 
 const CopyrightStatement = (): JSX.Element => (
   <StyledCopyrightStatement>
-    © {new Date().getFullYear()}, JWalkerCreations. All Rights Reserved
+    Designed and Developed by Jordan Walker, © {new Date().getFullYear()}
   </StyledCopyrightStatement>
 );
 

@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
+import { device } from "../../breakpoints";
 
 type LogoProps = {
   sizeVarient?: string;
@@ -12,6 +13,14 @@ const StyledSVG = styled.svg<LogoProps>`
   width: ${(props): string =>
     props.sizeVarient === "large" ? "75px" : "30px"};
   fill: var(--primary--color-100);
+
+  @media ${device.tablet} {
+    width: 50px;
+  }
+
+  @media ${device.mobileL} {
+    width: 30px;
+  } ;
 `;
 
 const StyledLogoLink = ({ sizeVarient }: LogoProps): JSX.Element => {
