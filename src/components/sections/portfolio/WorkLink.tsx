@@ -37,7 +37,7 @@ const StyledWorkLinkSecondary = styled.a`
 const StyledWorkLinkPrivate = styled.a`
   background-color: rgba(0, 0, 0, 0);
   color: var(--neutral--color-500);
-  border: 2px solid var(--neutral--color-800);
+  border: 2px solid var(--neutral--color-500);
   border-radius: 5px;
   font-size: 14px;
   font-weight: 600;

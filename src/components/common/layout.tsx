@@ -9,6 +9,8 @@ import "typeface-inter";
 import { normalize } from "styled-normalize";
 // Image
 import backgroundPattern from "../../images/stardust.png";
+// Breakpoints
+import { device } from "../../breakpoints";
 
 const GlobalStyle = createGlobalStyle`
   /* Normalize css styles */
@@ -47,6 +49,10 @@ const GlobalStyle = createGlobalStyle`
     color: var(--neutral--color-000);
     overflow-x: hidden;
     background-image: url(${backgroundPattern});
+
+    @media ${device.laptop} {
+      padding: 0 16px
+    }    
   }
 
   * {

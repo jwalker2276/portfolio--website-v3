@@ -58,7 +58,7 @@ const PortfolioWorkGrid = (): JSX.Element => (
         linkToProject="https://downshift-demo.netlify.app"
         linkToCode="https://github.com/jwalker2276/gatsby-site-demo"
         projectName="Downshift"
-        projectType="Web Site"
+        projectType="Website"
         gridArea="mainTwo"
       />
     </StyledPortfolioWorkGridMain>

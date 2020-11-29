@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { device } from "../../../breakpoints";
 import bkImage from "../../../images/sun.png";
 
 type BorderImageHeroProps = {
@@ -15,6 +16,10 @@ const StyledBorderImageHero = styled.div<BorderImageHeroProps>`
   background-size: cover;
   background-repeat: no-repeat;
   background-image: url(${({ backgroundImage }): string => backgroundImage});
+
+  @media ${device.laptop} {
+    display: none;
+  }
 `;
 
 const BorderImageHero = (): JSX.Element => (
