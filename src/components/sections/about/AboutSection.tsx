@@ -81,7 +81,7 @@ const AboutSection = (): JSX.Element => {
       }
       id="about"
     >
-      <BorderImageAbout />
+      {/* <BorderImageAbout /> */}
       <SectionHeader
         titleText="Who I am"
         subTitleText="About my craft and knowledge."

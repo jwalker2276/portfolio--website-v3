@@ -17,6 +17,7 @@ const StyledBackgroundImageTop = styled.div<BackgroundImagesProps>`
   background-size: cover;
   background-repeat: no-repeat;
   background-image: url(${({ backgroundImage }): string => backgroundImage});
+  z-index: -10;
 `;
 
 const StyledBackgroundImageRight = styled.div<BackgroundImagesProps>`
@@ -28,6 +29,7 @@ const StyledBackgroundImageRight = styled.div<BackgroundImagesProps>`
   background-size: cover;
   background-repeat: no-repeat;
   background-image: url(${({ backgroundImage }): string => backgroundImage});
+  z-index: -10;
 `;
 
 const StyledBackgroundImageBottom = styled.div<BackgroundImagesProps>`
@@ -39,13 +41,14 @@ const StyledBackgroundImageBottom = styled.div<BackgroundImagesProps>`
   background-size: cover;
   background-repeat: no-repeat;
   background-image: url(${({ backgroundImage }): string => backgroundImage});
+  z-index: -10;
 `;
 
 const BackgroundImages = (): JSX.Element => (
   <>
-    <StyledBackgroundImageTop backgroundImage={ImageTop} />
+    {/* <StyledBackgroundImageTop backgroundImage={ImageTop} />
     <StyledBackgroundImageRight backgroundImage={ImageRight} />
-    <StyledBackgroundImageBottom backgroundImage={ImageBottom} />
+    <StyledBackgroundImageBottom backgroundImage={ImageBottom} /> */}
   </>
 );
 

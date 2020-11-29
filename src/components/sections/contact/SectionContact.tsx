@@ -15,6 +15,7 @@ const StyledSectionContact = styled.section`
 `;
 
 const StyledSectionContactMethods = styled.div`
+  width: 100%;
   display: grid;
   grid-template: 1fr / 1fr 1fr;
   align-items: start;
@@ -22,6 +23,8 @@ const StyledSectionContactMethods = styled.div`
 
   @media ${device.tablet} {
     grid-template: 1fr 1fr / 1fr;
+    max-width: 300px;
+    margin: auto;
   }
 `;
 

@@ -2,6 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import { animated } from "react-spring";
 
+// Custom hook
+import useScreenWidth from "../../../customhooks/useScreenWidth";
+
 type AnimatedDivProps = {
   transformFunc: (x: number, y: number) => string;
   bkgimg: string;
@@ -32,13 +35,28 @@ const AnimatedDiv = ({
   properties,
   eleheight,
   elewidth,
-}: AnimatedDivProps): JSX.Element => (
-  <StyledAnimatedDiv
-    style={{ transform: properties.xy.interpolate(transformFunc) }}
-    bkgimg={bkgimg}
-    eleheight={eleheight}
-    elewidth={elewidth}
-  />
-);
+}: AnimatedDivProps): JSX.Element => {
+  // Call custom hook
+  const screenSize = useScreenWidth();
+
+  if (screenSize === "small") {
+    return (
+      <StyledAnimatedDiv
+        bkgimg={bkgimg}
+        eleheight={eleheight}
+        elewidth={elewidth}
+      />
+    );
+  } else {
+    return (
+      <StyledAnimatedDiv
+        style={{ transform: properties.xy.interpolate(transformFunc) }}
+        bkgimg={bkgimg}
+        eleheight={eleheight}
+        elewidth={elewidth}
+      />
+    );
+  }
+};
 
 export default AnimatedDiv;

@@ -14,6 +14,7 @@ const StyledBackgroundImageHero = styled.div<BackgroundImageHeroProps>`
   background-size: contain;
   background-repeat: no-repeat;
   background-image: url(${({ backgroundImage }): string => backgroundImage});
+  z-index: -10;
 
   @media ${device.laptop} {
     max-height: 512px;
