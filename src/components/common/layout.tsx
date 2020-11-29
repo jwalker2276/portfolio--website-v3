@@ -35,8 +35,9 @@ const GlobalStyle = createGlobalStyle`
     --page--padding: 0px 0px;
   }
 
-  html {
-    scroll-behavior: smooth;
+  html, body, #___gatsby {
+    width: 100%;
+    height: 100%;
   }
   
   body {

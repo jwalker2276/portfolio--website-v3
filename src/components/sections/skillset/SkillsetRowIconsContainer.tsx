@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import SkillsetIcon from "./SkillsetIcon";
 import SkillsetAnimatedIcons from "./SkillsetAnimatedIcons";
+import { device } from "../../../breakpoints";
 
 type IconsContainerProps = {
   largeIcon: string;
@@ -16,6 +17,10 @@ const StyledRowIconsContainer = styled.div`
   grid-template: 128px / 128px 1fr 65px;
   justify-items: center;
   align-items: center;
+
+  @media ${device.mobileL} {
+    max-width: 100%;
+  }
 `;
 
 const StyledHR = styled.hr`

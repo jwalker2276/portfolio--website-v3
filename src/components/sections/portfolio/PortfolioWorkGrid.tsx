@@ -7,6 +7,7 @@ import vindecoderImage from "../../../images/vindecoder_ss_1.png";
 import downshiftImage from "../../../images/downshift_ss_1.png";
 import canvasAnimationImage from "../../../images/canvas_animation_ss_1.png";
 import devlistImage from "../../../images/devlist_ss_1.png";
+import { device } from "../../../breakpoints";
 
 const StyledPortfolioWorkGrid = styled.div`
   height: 100%;
@@ -14,6 +15,10 @@ const StyledPortfolioWorkGrid = styled.div`
   display: grid;
   grid-template: 1fr / 1.5fr 1fr;
   grid-gap: 8px;
+
+  @media ${device.tablet} {
+    grid-template: 1fr 1fr / 1fr;
+  }
 `;
 
 const StyledPortfolioWorkGridMain = styled.div`
@@ -27,6 +32,11 @@ const StyledPortfolioWorkGridMain = styled.div`
     "mainOne"
     "mainTwo";
   grid-gap: 8px;
+
+  @media ${device.tablet} {
+    min-width: 100%;
+    min-height: 100%;
+  }
 `;
 
 const StyledPortfolioWorkGridOther = styled.div`
@@ -41,6 +51,11 @@ const StyledPortfolioWorkGridOther = styled.div`
     "otherTwo"
     "otherThree";
   grid-gap: 8px;
+
+  @media ${device.tablet} {
+    min-width: 100%;
+    min-height: 100%;
+  }
 `;
 
 const PortfolioWorkGrid = (): JSX.Element => (

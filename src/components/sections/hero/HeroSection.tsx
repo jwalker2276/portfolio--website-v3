@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { animateScroll } from "react-scroll";
+import { device } from "../../../breakpoints";
 import PrimaryHeading from "./PrimaryHeading";
 import SecondaryHeading from "./SecondaryHeading";
 import PrimaryCallToAction from "../../common/buttons/PrimaryCallToAction";
@@ -14,20 +15,33 @@ const StyledHeroSection = styled.section`
   display: grid;
   grid-template-columns: auto 1fr;
   grid-template-rows: 1fr;
+
+  @media ${device.tabletS} {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const StyledLeftDiv = styled.div`
-  width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: start;
+
+  @media ${device.tabletS} {
+    padding: 0 24px;
+  }
 `;
 
 const StyledRightDiv = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: 100%;
+
+  @media ${device.tabletS} {
+    display: none;
+  }
 `;
 
 // Onclick event for button

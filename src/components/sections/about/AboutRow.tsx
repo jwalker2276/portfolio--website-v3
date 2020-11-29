@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { device } from "../../../breakpoints";
 
 type AboutSectionRowProps = {
   children: React.ReactNode;
@@ -12,6 +13,10 @@ const StyledAboutRow = styled.div`
   justify-items: center;
   align-items: center;
   margin: 96px 0;
+
+  @media ${device.tablet} {
+    grid-template: auto 1fr / 1fr;
+  }
 `;
 
 const AboutRow = ({ children }: AboutSectionRowProps): JSX.Element => (
