@@ -4,6 +4,7 @@ import { useSpring } from "react-spring";
 import SectionHeader from "../common/SectionHeader";
 import AboutRow from "./AboutRow";
 import AboutRowIconsContainer from "./AboutRowIconsContainer";
+import AboutRowStaticIcons from "./AboutRowStaticIcons";
 import AboutRowText from "./AboutRowText";
 import PrimaryCallToActionButton from "../../common/buttons/PrimaryCallToAction";
 import SectionIntroText from "../common/SectionIntroText";
@@ -25,6 +26,10 @@ import IconBoxesBottom from "../../../images/boxes_icon_bottom.svg";
 
 import IconGearsTop from "../../../images/gears_icon_top.svg";
 import IconGearsBottom from "../../../images/gears_icon_bottom.svg";
+import useScreenWidth from "../../../customhooks/useScreenWidth";
+
+import StaticIconOne from "../../../images/icon_set_one.svg";
+import StaticIconTwo from "../../../images/icon_set_two.svg";
 
 const infoOne =
   "I strive to create interesting and attractive front-end assets following a component-based approach. I’m constantly researching new technologies, best practices, and techniques to tune my products for the target audience. As for technologies, I work with a variety of tools that allow me to swiftly engineer assets for your project.";
@@ -74,6 +79,9 @@ const AboutSection = (): JSX.Element => {
     config: { mass: 100, tension: 1550, friction: 500 },
   }));
 
+  // Custom hook called
+  const screenSize = useScreenWidth();
+
   return (
     <StyledAboutSection
       onMouseMove={({ clientX: x, clientY: y }): void =>
@@ -88,92 +96,102 @@ const AboutSection = (): JSX.Element => {
       />
       <SectionIntroText displayText="I'm passionate about creating interesting web assets with a strong emphasis on clean code." />
       <AboutRow>
-        <AboutRowIconsContainer>
-          <ParallaxIconContainer offsetX="-50" offsetY="25">
-            <AnimatedDiv
-              transformFunc={transBottom}
-              bkgimg={IconEleBottom}
-              properties={properties}
-              eleheight="150"
-              elewidth="150"
-            />
-            <AnimatedDiv
-              transformFunc={transMid}
-              bkgimg={IconEleMid}
-              properties={properties}
-              eleheight="75"
-              elewidth="75"
-            />
-            <AnimatedDiv
-              transformFunc={transTop}
-              bkgimg={IconEleTop}
-              properties={properties}
-              eleheight="50"
-              elewidth="50"
-            />
-          </ParallaxIconContainer>
-          <ParallaxIconContainer offsetX="50" offsetY="-25">
-            <AnimatedDiv
-              transformFunc={transBottom}
-              bkgimg={IconCodeBottom}
-              properties={properties}
-              eleheight="150"
-              elewidth="150"
-            />
-            <AnimatedDiv
-              transformFunc={transMid}
-              bkgimg={IconCodeMid}
-              properties={properties}
-              eleheight="75"
-              elewidth="75"
-            />
-            <AnimatedDiv
-              transformFunc={transTop}
-              bkgimg={IconCodeTop}
-              properties={properties}
-              eleheight="50"
-              elewidth="50"
-            />
-          </ParallaxIconContainer>
-        </AboutRowIconsContainer>
+        {screenSize === "large" && (
+          <AboutRowIconsContainer>
+            <ParallaxIconContainer offsetX="-50" offsetY="25">
+              <AnimatedDiv
+                transformFunc={transBottom}
+                bkgimg={IconEleBottom}
+                properties={properties}
+                eleheight="150"
+                elewidth="150"
+              />
+              <AnimatedDiv
+                transformFunc={transMid}
+                bkgimg={IconEleMid}
+                properties={properties}
+                eleheight="75"
+                elewidth="75"
+              />
+              <AnimatedDiv
+                transformFunc={transTop}
+                bkgimg={IconEleTop}
+                properties={properties}
+                eleheight="50"
+                elewidth="50"
+              />
+            </ParallaxIconContainer>
+            <ParallaxIconContainer offsetX="50" offsetY="-25">
+              <AnimatedDiv
+                transformFunc={transBottom}
+                bkgimg={IconCodeBottom}
+                properties={properties}
+                eleheight="150"
+                elewidth="150"
+              />
+              <AnimatedDiv
+                transformFunc={transMid}
+                bkgimg={IconCodeMid}
+                properties={properties}
+                eleheight="75"
+                elewidth="75"
+              />
+              <AnimatedDiv
+                transformFunc={transTop}
+                bkgimg={IconCodeTop}
+                properties={properties}
+                eleheight="50"
+                elewidth="50"
+              />
+            </ParallaxIconContainer>
+          </AboutRowIconsContainer>
+        )}
+        {screenSize === "small" && (
+          <AboutRowStaticIcons imageSource={StaticIconOne} />
+        )}
         <AboutRowText textToDisplay={infoOne} />
       </AboutRow>
       <AboutRow>
         <AboutRowText textToDisplay={infoTwo} />
-        <AboutRowIconsContainer>
-          <ParallaxIconContainer offsetX="-50" offsetY="50">
-            <AnimatedDiv
-              transformFunc={transBottom}
-              bkgimg={IconBoxesBottom}
-              properties={properties}
-              eleheight="150"
-              elewidth="150"
-            />
-            <AnimatedDiv
-              transformFunc={transTop}
-              bkgimg={IconBoxesTop}
-              properties={properties}
-              eleheight="75"
-              elewidth="75"
-            />
-          </ParallaxIconContainer>
-          <ParallaxIconContainer offsetX="50" offsetY="-50">
-            <AnimatedDiv
-              transformFunc={transBottom}
-              bkgimg={IconGearsBottom}
-              properties={properties}
-              eleheight="150"
-              elewidth="150"
-            />
-            <AnimatedDiv
-              transformFunc={transTop}
-              bkgimg={IconGearsTop}
-              properties={properties}
-              eleheight="75"
-              elewidth="75"
-            />
-          </ParallaxIconContainer>
-        </AboutRowIconsContainer>
+        {screenSize === "large" && (
+          <AboutRowIconsContainer>
+            <ParallaxIconContainer offsetX="-50" offsetY="50">
+              <AnimatedDiv
+                transformFunc={transBottom}
+                bkgimg={IconBoxesBottom}
+                properties={properties}
+                eleheight="150"
+                elewidth="150"
+              />
+              <AnimatedDiv
+                transformFunc={transTop}
+                bkgimg={IconBoxesTop}
+                properties={properties}
+                eleheight="75"
+                elewidth="75"
+              />
+            </ParallaxIconContainer>
+            <ParallaxIconContainer offsetX="50" offsetY="-50">
+              <AnimatedDiv
+                transformFunc={transBottom}
+                bkgimg={IconGearsBottom}
+                properties={properties}
+                eleheight="150"
+                elewidth="150"
+              />
+              <AnimatedDiv
+                transformFunc={transTop}
+                bkgimg={IconGearsTop}
+                properties={properties}
+                eleheight="75"
+                elewidth="75"
+              />
+            </ParallaxIconContainer>
+          </AboutRowIconsContainer>
+        )}
+        {screenSize === "small" && (
+          <AboutRowStaticIcons imageSource={StaticIconTwo} />
+        )}
       </AboutRow>
       <StyledButtonWrapper>
         <PrimaryCallToActionButton
