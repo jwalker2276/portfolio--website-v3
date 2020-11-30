@@ -1,8 +1,10 @@
 module.exports = {
   siteMetadata: {
-    title: `Jordan Walker`,
-    description: ``,
+    title: `Jordan Walker | Full-stack Web Developer`,
+    description: `Full-stack web developer experienced in developing web applications using modern tools.`,
     author: `Jordan Walker`,
+    url: `https://www.jordanwalker.dev`,
+    image: `/images/site_main.png`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -18,13 +20,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Jordan Walker`,
+        short_name: `Jordan Walker`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `src/images/logo.svg`, // This path is relative to the root of the site.
+        background_color: `#1f2933`,
+        theme_color: `#1f2933`,
+        display: `standalone`,
+        icon: `src/images/logo_color.svg`, // This path is relative to the root of the site.
       },
     },
     {
@@ -50,6 +52,6 @@ module.exports = {
     "gatsby-plugin-styled-components",
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    `gatsby-plugin-offline`,
   ],
 };

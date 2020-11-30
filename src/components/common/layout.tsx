@@ -11,6 +11,7 @@ import { normalize } from "styled-normalize";
 import backgroundPattern from "../../images/stardust.png";
 // Breakpoints
 import { device } from "../../breakpoints";
+import SEO from "./SEO";
 
 const GlobalStyle = createGlobalStyle`
   /* Normalize css styles */
@@ -67,18 +68,9 @@ interface Props {
 }
 
 const Layout = ({ children }: Props): JSX.Element => {
-  // const data = useStaticQuery(graphql`
-  //   query SiteTitleQuery {
-  //     site {
-  //       siteMetadata {
-  //         title
-  //       }
-  //     }
-  //   }
-  // `);
-
   return (
     <>
+      <SEO />
       <GlobalStyle />
       <NavWrapper />
       <main>{children}</main>
