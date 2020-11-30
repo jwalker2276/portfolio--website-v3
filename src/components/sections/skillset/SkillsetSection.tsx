@@ -15,11 +15,12 @@ import PhotoIcon from "../../../images/icon-photo.svg";
 import ServerIcon from "../../../images/icon-server.svg";
 import SwatchIcon from "../../../images/icon-swatch.svg";
 import TuneIcon from "../../../images/icon-tune.svg";
+import useScreenWidth from "../../../customhooks/useScreenWidth";
 
 // Content for this section
 const rowOneTitle = "Custom Web Application";
 const rowOneText =
-  "If you need more than a smiple website, no problem. I can build web applications to meet the needs of your customers and you.";
+  "If you need more than a simple website, no problem. I can build web applications to meet the needs of your customers and you.";
 
 const rowTwoTitle = "Unique Web Sites";
 const rowTwoText =
@@ -45,39 +46,52 @@ const primaryActionEvent = (): void => {
   animateScroll.scrollToBottom({ smooth: "easeOutQuint", duration: 250 });
 };
 
-const SkillsetSection = (): JSX.Element => (
-  <StyledSection id="skillset">
-    {/* <BorderImageSkillset /> */}
-    <SectionHeader
-      titleText="What I Do"
-      subTitleText="I create visually appealing apps with clean code."
-    />
-    <SkillsetRow>
-      <SkillsetRowIconsContainer
-        largeIcon={CodeIcon}
-        smallIcons={[ApplicationIcon, ServerIcon]}
+const SkillsetSection = (): JSX.Element => {
+  // Custom hook
+  const screenSize = useScreenWidth(640);
+
+  return (
+    <StyledSection id="skillset">
+      {/* <BorderImageSkillset /> */}
+      <SectionHeader
+        titleText="What I Do"
+        subTitleText="I create visually appealing apps with clean code."
       />
-      <SkillsetRowTextContainer titleText={rowOneTitle} text={rowOneText} />
-    </SkillsetRow>
-    <SkillsetRow>
-      <SkillsetRowTextContainer titleText={rowTwoTitle} text={rowTwoText} />
-      <SkillsetRowIconsContainer
-        largeIcon={CodeIcon}
-        smallIcons={[SwatchIcon, PhotoIcon]}
+      <SkillsetRow>
+        <SkillsetRowIconsContainer
+          largeIcon={CodeIcon}
+          smallIcons={[ApplicationIcon, ServerIcon]}
+        />
+        <SkillsetRowTextContainer titleText={rowOneTitle} text={rowOneText} />
+      </SkillsetRow>
+      <SkillsetRow>
+        {screenSize === "large" && (
+          <SkillsetRowTextContainer titleText={rowTwoTitle} text={rowTwoText} />
+        )}
+        <SkillsetRowIconsContainer
+          largeIcon={CodeIcon}
+          smallIcons={[SwatchIcon, PhotoIcon]}
+        />
+        {screenSize === "small" && (
+          <SkillsetRowTextContainer titleText={rowTwoTitle} text={rowTwoText} />
+        )}
+      </SkillsetRow>
+      <SkillsetRow>
+        <SkillsetRowIconsContainer
+          largeIcon={CodeIcon}
+          smallIcons={[TuneIcon, CogIcon]}
+        />
+        <SkillsetRowTextContainer
+          titleText={rowThreeTitle}
+          text={rowThreeText}
+        />
+      </SkillsetRow>
+      <PrimaryCallToActionButton
+        buttonText="Hire me"
+        buttonEvent={primaryActionEvent}
       />
-    </SkillsetRow>
-    <SkillsetRow>
-      <SkillsetRowIconsContainer
-        largeIcon={CodeIcon}
-        smallIcons={[TuneIcon, CogIcon]}
-      />
-      <SkillsetRowTextContainer titleText={rowThreeTitle} text={rowThreeText} />
-    </SkillsetRow>
-    <PrimaryCallToActionButton
-      buttonText="Hire me"
-      buttonEvent={primaryActionEvent}
-    />
-  </StyledSection>
-);
+    </StyledSection>
+  );
+};
 
 export default SkillsetSection;

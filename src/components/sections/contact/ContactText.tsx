@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { device } from "../../../breakpoints";
 
 type ContactTextProps = {
   text: string;
@@ -8,6 +9,10 @@ type ContactTextProps = {
 const StyledContactText = styled.p`
   display: inline-block;
   font-size: 20px;
+
+  @media ${device.tablet} {
+    font-size: 16px;
+  }
 `;
 
 const ContactText = ({ text }: ContactTextProps): JSX.Element => (

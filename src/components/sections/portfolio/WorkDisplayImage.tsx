@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { animated } from "react-spring";
+import { device } from "../../../breakpoints";
 
 type WorkDisplayImageProps = {
   imagesource: string;
@@ -17,6 +18,12 @@ const StyledWorkDisplayImage = styled(animated.div)<WorkDisplayImageProps>`
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 5px;
+
+  @media ${device.tablet} {
+    position: relative;
+    min-width: 1px;
+    min-height: 1px;
+  }
 `;
 
 const WorkDisplayImage = ({

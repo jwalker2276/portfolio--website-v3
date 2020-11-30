@@ -16,6 +16,8 @@ const StyledAboutRow = styled.div`
 
   @media ${device.tablet} {
     grid-template: auto 1fr / 1fr;
+    margin: 48px 0;
+    row-gap: 32px;
   }
 `;
 

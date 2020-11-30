@@ -4,6 +4,7 @@ import WorkDisplayImage from "./WorkDisplayImage";
 import WorkDisplayInfo from "./WorkDisplayInfo";
 
 import { useTransition } from "react-spring";
+import { device } from "../../../breakpoints";
 
 type WorkDisplayProps = {
   imagesource: string;
@@ -17,6 +18,12 @@ type WorkDisplayProps = {
 const StyledWorkDisplay = styled.div<Pick<WorkDisplayProps, "gridArea">>`
   grid-area: ${(props): string => props.gridArea};
   position: relative;
+
+  @media ${device.tablet} {
+    width: 100%;
+    height: 100%;
+    grid-area: unset;
+  }
 `;
 
 const WorkDisplay = ({

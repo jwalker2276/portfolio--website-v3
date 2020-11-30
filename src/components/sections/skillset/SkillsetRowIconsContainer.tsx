@@ -18,7 +18,7 @@ const StyledRowIconsContainer = styled.div`
   justify-items: center;
   align-items: center;
 
-  @media ${device.mobileL} {
+  @media ${device.tablet} {
     max-width: 100%;
     grid-template: auto / auto 1fr auto;
   }

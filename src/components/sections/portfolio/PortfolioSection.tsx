@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { device } from "../../../breakpoints";
 import PrimaryCallToActionButton from "../../common/buttons/PrimaryCallToAction";
 import SectionHeader from "../common/SectionHeader";
 import PortfolioWorkDisplay from "./PortfolioWorkDisplay";
@@ -11,6 +12,10 @@ const StyledPortfolioSection = styled.section`
   height: 100%;
   display: grid;
   grid-template: auto 1fr auto / 1fr;
+
+  @media ${device.tablet} {
+    padding-bottom: 64px;
+  }
 `;
 
 const StyledButtonWrapper = styled.div`

@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 
-const useScreenWidth = (): string => {
+const useScreenWidth = (maxWidth = 768): string => {
   const [screenLayoutType, setScreenLayoutType] = useState("large");
 
   const isClient = typeof window === "object";
 
   useEffect(() => {
     const updatedLayoutSize = (): void => {
-      if (window.innerWidth < 768) {
+      if (window.innerWidth < maxWidth) {
         setScreenLayoutType("small");
       } else {
         setScreenLayoutType("large");

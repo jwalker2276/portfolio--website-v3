@@ -6,6 +6,7 @@ import GithubIcon from "../../../images/icon-github.svg";
 import EmailIcon from "../../../images/icon-email.svg";
 import ContactLinkContainer from "./ContactLinkContainer";
 import ContactTextContainer from "./ContactTextContainer";
+import { device } from "../../../breakpoints";
 
 // Links
 const linkedin = "https://www.linkedin.com/in/jordan-walker-85246458/";
@@ -18,7 +19,11 @@ const StyledPrimaryContactMethod = styled.div`
   justify-items: left;
   align-items: center;
   row-gap: 64px;
-  width: 384px;
+
+  @media ${device.mobileL} {
+    margin: 32px 0;
+    width: 100%;
+  }
 `;
 
 const PrimaryContactMethod = (): JSX.Element => (

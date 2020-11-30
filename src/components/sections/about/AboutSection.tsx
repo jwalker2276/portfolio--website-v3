@@ -30,6 +30,7 @@ import useScreenWidth from "../../../customhooks/useScreenWidth";
 
 import StaticIconOne from "../../../images/icon_set_one.svg";
 import StaticIconTwo from "../../../images/icon_set_two.svg";
+import { device } from "../../../breakpoints";
 
 const infoOne =
   "I strive to create interesting and attractive front-end assets following a component-based approach. I’m constantly researching new technologies, best practices, and techniques to tune my products for the target audience. As for technologies, I work with a variety of tools that allow me to swiftly engineer assets for your project.";
@@ -47,6 +48,10 @@ const StyledAboutSection = styled.section`
   padding: var(--page--padding);
   padding-bottom: 128px;
   width: 100%;
+
+  @media ${device.tablet} {
+    padding-bottom: 64px;
+  }
 `;
 
 const StyledButtonWrapper = styled.div`
@@ -152,6 +157,9 @@ const AboutSection = (): JSX.Element => {
         <AboutRowText textToDisplay={infoOne} />
       </AboutRow>
       <AboutRow>
+        {screenSize === "small" && (
+          <AboutRowStaticIcons imageSource={StaticIconTwo} />
+        )}
         <AboutRowText textToDisplay={infoTwo} />
         {screenSize === "large" && (
           <AboutRowIconsContainer>
@@ -188,9 +196,6 @@ const AboutSection = (): JSX.Element => {
               />
             </ParallaxIconContainer>
           </AboutRowIconsContainer>
-        )}
-        {screenSize === "small" && (
-          <AboutRowStaticIcons imageSource={StaticIconTwo} />
         )}
       </AboutRow>
       <StyledButtonWrapper>

@@ -12,6 +12,10 @@ const StyledSectionContact = styled.section`
   padding: var(--page--padding);
   padding-bottom: 128px;
   width: 100%;
+
+  @media ${device.tablet} {
+    padding-bottom: 64px;
+  }
 `;
 
 const StyledSectionContactMethods = styled.div`
@@ -22,9 +26,14 @@ const StyledSectionContactMethods = styled.div`
   margin: 128px 0 0 0;
 
   @media ${device.tablet} {
-    grid-template: 1fr 1fr / 1fr;
-    max-width: 300px;
-    margin: auto;
+    grid-template: 1fr / 1fr 1fr;
+    margin: 64px 0 0 0;
+  }
+
+  @media ${device.tabletS} {
+    margin: 0;
+    grid-template: auto 1fr / 1fr;
+    align-items: center;
   }
 `;
 

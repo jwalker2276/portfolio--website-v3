@@ -6,8 +6,8 @@ type AboutRowStaticIconsProps = {
 };
 
 const StyledAboutRowStaticIcons = styled.img`
-  width: 400px;
-  height: 400px;
+  width: 150px;
+  height: 150px;
 `;
 
 const AboutRowStaticIcons = ({
