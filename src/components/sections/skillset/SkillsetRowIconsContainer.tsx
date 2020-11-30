@@ -12,11 +12,11 @@ type IconsContainerProps = {
 const StyledRowIconsContainer = styled.div`
   width: 100%;
   max-width: 384px;
-  height: 100%;
   display: grid;
   grid-template: 128px / 128px 1fr 65px;
   justify-items: center;
   align-items: center;
+  margin-bottom: 16px;
 
   @media ${device.tablet} {
     max-width: 100%;

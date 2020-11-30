@@ -15,13 +15,13 @@ const StyledSkillsetSectionRow = styled.div`
   margin: 128px 0;
   column-gap: 24px;
 
-  @media ${device.tablet} {
+  @media ${device.tabletL} {
     margin: 64px 0;
   }
 
   @media ${device.tabletS} {
     grid-template: 1fr 1fr / 1fr;
-    margin: 36px 0;
+    margin: 48px 0 48px 0;
   }
 `;
 

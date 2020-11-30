@@ -3,6 +3,8 @@ import styled from "styled-components";
 import { animated } from "react-spring";
 import Logo from "../common/Logo";
 import NavActions from "./NavActions";
+import NavActionsMobile from "./NavActionsMobile";
+import useScreenWidth from "../../customhooks/useScreenWidth";
 
 type StyleNavOpenProps = {
   style: React.CSSProperties;
@@ -21,11 +23,17 @@ const StyledNavOpen = styled(animated.div)`
   will-change: transform, opaction;
 `;
 
-const NavOpen = ({ style }: StyleNavOpenProps): JSX.Element => (
-  <StyledNavOpen style={style}>
-    <Logo />
-    <NavActions />
-  </StyledNavOpen>
-);
+const NavOpen = ({ style }: StyleNavOpenProps): JSX.Element => {
+  // Custom hook
+  const screenSize = useScreenWidth(450);
+
+  return (
+    <StyledNavOpen style={style}>
+      <Logo />
+      {screenSize === "small" && <NavActionsMobile />}
+      {screenSize === "large" && <NavActions />}
+    </StyledNavOpen>
+  );
+};
 
 export default NavOpen;

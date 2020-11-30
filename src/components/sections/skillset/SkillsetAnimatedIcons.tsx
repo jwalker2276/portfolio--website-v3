@@ -34,7 +34,7 @@ const SkillAnimatedIcons = ({
 
   // Configs for animations
   const animationPropsOne = useSpring({
-    marginBottom: isHiding ? 150 : 0,
+    marginTop: isHiding ? 150 : 0,
     delay: 2000,
     config: config.wobbly,
     onRest: () => setHiding(!isHiding),

@@ -2,11 +2,11 @@ import React from "react";
 import styled from "styled-components";
 import WorkDisplay from "./WorkDisplay";
 // Images
-import rateTeamMateImage from "../../../images/rtm_ss_1.png";
-import vindecoderImage from "../../../images/vindecoder_ss_1.png";
-import downshiftImage from "../../../images/downshift_ss_1.png";
-import canvasAnimationImage from "../../../images/canvas_animation_ss_1.png";
-import devlistImage from "../../../images/devlist_ss_1.png";
+import rateTeamMateImage from "../../../images/rtm_ss_1.jpg";
+import vindecoderImage from "../../../images/vindecoder_ss_1.jpg";
+import downshiftImage from "../../../images/downshift_ss_1.jpg";
+import canvasAnimationImage from "../../../images/canvas_animation_ss_1.jpg";
+import devlistImage from "../../../images/devlist_ss_1.jpg";
 import { device } from "../../../breakpoints";
 import useScreenWidth from "../../../customhooks/useScreenWidth";
 

@@ -16,6 +16,7 @@ import ServerIcon from "../../../images/icon-server.svg";
 import SwatchIcon from "../../../images/icon-swatch.svg";
 import TuneIcon from "../../../images/icon-tune.svg";
 import useScreenWidth from "../../../customhooks/useScreenWidth";
+import { device } from "../../../breakpoints";
 
 // Content for this section
 const rowOneTitle = "Custom Web Application";
@@ -40,6 +41,10 @@ const StyledSection = styled.section`
   justify-content: start;
   align-items: center;
   overflow-x: hidden;
+
+  @media ${device.tablet} {
+    padding-bottom: 64px;
+  }
 `;
 
 // Onclick event for button

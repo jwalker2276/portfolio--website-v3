@@ -7,8 +7,13 @@ import SecondaryHeading from "./SecondaryHeading";
 import PrimaryCallToAction from "../../common/buttons/PrimaryCallToAction";
 import BackgroundImageHero from "./BackgroundImageHero";
 import BorderImageHero from "./BorderImageHero";
+import bkImage from "../../../images/hero_bk.png";
 
-const StyledHeroSection = styled.section`
+type HeroSectionProps = {
+  backgroundImage: string;
+};
+
+const StyledHeroSection = styled.section<HeroSectionProps>`
   padding: var(--page--padding);
   width: 100%;
   height: 100vh;
@@ -18,6 +23,10 @@ const StyledHeroSection = styled.section`
 
   @media ${device.tabletS} {
     grid-template-columns: 1fr;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(${({ backgroundImage }): string => backgroundImage});
+    z-index: -1;
   }
 `;
 
@@ -26,6 +35,7 @@ const StyledLeftDiv = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: start;
+  padding-left: 85px;
 
   @media ${device.tabletS} {
     padding: 0 24px;
@@ -50,7 +60,7 @@ const primaryActionEvent = (): void => {
 };
 
 const HeroSection = (): JSX.Element => (
-  <StyledHeroSection id="hero">
+  <StyledHeroSection id="hero" backgroundImage={bkImage}>
     <BorderImageHero />
     <StyledLeftDiv>
       <SecondaryHeading />
