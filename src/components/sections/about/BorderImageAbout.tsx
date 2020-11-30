@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { device } from "../../../breakpoints";
 import bkImage from "../../../images/one_body.png";
 
 type BorderImageAboutProps = {
@@ -15,6 +16,12 @@ const StyledBorderImageAbout = styled.div<BorderImageAboutProps>`
   background-size: cover;
   background-repeat: no-repeat;
   background-image: url(${({ backgroundImage }): string => backgroundImage});
+  z-index: -1;
+
+  @media ${device.mobileL} {
+    right: -41%;
+    top: -14%;
+  }
 `;
 
 const BorderImageAbout = (): JSX.Element => (

@@ -51,7 +51,7 @@ const primaryActionEvent = (): void => {
 
 const HeroSection = (): JSX.Element => (
   <StyledHeroSection id="hero">
-    {/* <BorderImageHero /> */}
+    <BorderImageHero />
     <StyledLeftDiv>
       <SecondaryHeading />
       <PrimaryHeading />
@@ -60,7 +60,9 @@ const HeroSection = (): JSX.Element => (
         buttonEvent={primaryActionEvent}
       />
     </StyledLeftDiv>
-    <StyledRightDiv>{/* <BackgroundImageHero /> */}</StyledRightDiv>
+    <StyledRightDiv>
+      <BackgroundImageHero />
+    </StyledRightDiv>
   </StyledHeroSection>
 );
 

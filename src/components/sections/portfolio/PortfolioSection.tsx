@@ -12,6 +12,7 @@ const StyledPortfolioSection = styled.section`
   height: 100%;
   display: grid;
   grid-template: auto 1fr auto / 1fr;
+  overflow-x: hidden;
 
   @media ${device.tablet} {
     padding-bottom: 64px;

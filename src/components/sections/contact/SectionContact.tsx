@@ -12,6 +12,7 @@ const StyledSectionContact = styled.section`
   padding: var(--page--padding);
   padding-bottom: 128px;
   width: 100%;
+  overflow: hidden;
 
   @media ${device.tablet} {
     padding-bottom: 64px;

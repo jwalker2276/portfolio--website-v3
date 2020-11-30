@@ -3,6 +3,7 @@ import styled from "styled-components";
 import ImageTop from "../../../images/two_body_2.png";
 import ImageRight from "../../../images/two_body.png";
 import ImageBottom from "../../../images/four_body.png";
+import { device } from "../../../breakpoints";
 
 type BackgroundImagesProps = {
   backgroundImage: string;
@@ -18,6 +19,11 @@ const StyledBackgroundImageTop = styled.div<BackgroundImagesProps>`
   background-repeat: no-repeat;
   background-image: url(${({ backgroundImage }): string => backgroundImage});
   z-index: -10;
+
+  @media ${device.mobileL} {
+    right: -35%;
+    top: 10%;
+  }
 `;
 
 const StyledBackgroundImageRight = styled.div<BackgroundImagesProps>`
@@ -30,12 +36,16 @@ const StyledBackgroundImageRight = styled.div<BackgroundImagesProps>`
   background-repeat: no-repeat;
   background-image: url(${({ backgroundImage }): string => backgroundImage});
   z-index: -10;
+
+  @media ${device.mobileL} {
+    display: none;
+  }
 `;
 
 const StyledBackgroundImageBottom = styled.div<BackgroundImagesProps>`
   position: absolute;
   left: 0px;
-  bottom: -190px;
+  bottom: -150px;
   width: 400px;
   height: 400px;
   background-size: cover;
@@ -46,9 +56,9 @@ const StyledBackgroundImageBottom = styled.div<BackgroundImagesProps>`
 
 const BackgroundImages = (): JSX.Element => (
   <>
-    {/* <StyledBackgroundImageTop backgroundImage={ImageTop} />
+    <StyledBackgroundImageTop backgroundImage={ImageTop} />
     <StyledBackgroundImageRight backgroundImage={ImageRight} />
-    <StyledBackgroundImageBottom backgroundImage={ImageBottom} /> */}
+    <StyledBackgroundImageBottom backgroundImage={ImageBottom} />
   </>
 );
 

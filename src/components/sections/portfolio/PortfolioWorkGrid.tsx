@@ -23,8 +23,6 @@ const StyledPortfolioWorkGrid = styled.div`
 `;
 
 const StyledPortfolioWorkGridMain = styled.div`
-  min-width: 525px;
-  min-height: 329px;
   height: 100%;
   width: 100%;
   display: grid;

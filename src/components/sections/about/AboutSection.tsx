@@ -48,6 +48,7 @@ const StyledAboutSection = styled.section`
   padding: var(--page--padding);
   padding-bottom: 128px;
   width: 100%;
+  overflow-x: hidden;
 
   @media ${device.tablet} {
     padding-bottom: 64px;
@@ -94,7 +95,7 @@ const AboutSection = (): JSX.Element => {
       }
       id="about"
     >
-      {/* <BorderImageAbout /> */}
+      <BorderImageAbout />
       <SectionHeader
         titleText="Who I am"
         subTitleText="About my craft and knowledge."

@@ -39,6 +39,7 @@ const StyledSection = styled.section`
   flex-direction: column;
   justify-content: start;
   align-items: center;
+  overflow-x: hidden;
 `;
 
 // Onclick event for button
@@ -52,7 +53,7 @@ const SkillsetSection = (): JSX.Element => {
 
   return (
     <StyledSection id="skillset">
-      {/* <BorderImageSkillset /> */}
+      <BorderImageSkillset />
       <SectionHeader
         titleText="What I Do"
         subTitleText="I create visually appealing apps with clean code."
