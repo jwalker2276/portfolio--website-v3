@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { animated } from "react-spring";
 import WorkLink from "./WorkLink";
+import { device } from "../../../breakpoints";
 
 type WorkDisplayInfoProps = {
   linkToProject: string;
@@ -13,6 +14,8 @@ type WorkDisplayInfoProps = {
 
 const StyledWorkDisplayInfo = styled(animated.div)`
   position: absolute;
+  min-width: 343px;
+  min-height: 216px;
   background-color: var(--neutral--color-800);
   height: 100%;
   width: 100%;
@@ -22,6 +25,12 @@ const StyledWorkDisplayInfo = styled(animated.div)`
   display: grid;
   grid-template: auto auto 1fr / 1fr;
   box-shadow: inset 0px 0px 8px 4px var(--shadow--color-500);
+
+  @media ${device.tablet} {
+    position: relative;
+    min-width: 1px;
+    min-height: 1px;
+  }
 `;
 
 const StyledLinksWrapper = styled.div`
@@ -54,19 +63,21 @@ const WorkDisplayInfo = ({
   projectName,
   projectType,
   style,
-}: WorkDisplayInfoProps): JSX.Element => (
-  <StyledWorkDisplayInfo style={style}>
-    <StyledProjectName>{projectName}</StyledProjectName>
-    <StyledProjectType>{projectType}</StyledProjectType>
-    <StyledLinksWrapper>
-      <WorkLink link={linkToProject} varient="primary" />
+}: WorkDisplayInfoProps): JSX.Element => {
+  return (
+    <StyledWorkDisplayInfo style={style}>
+      <StyledProjectName>{projectName}</StyledProjectName>
+      <StyledProjectType>{projectType}</StyledProjectType>
+      <StyledLinksWrapper>
+        <WorkLink link={linkToProject} varient="primary" />
 
-      <WorkLink
-        link={linkToCode}
-        varient={linkToCode === undefined ? "private" : "secondary"}
-      />
-    </StyledLinksWrapper>
-  </StyledWorkDisplayInfo>
-);
+        <WorkLink
+          link={linkToCode}
+          varient={linkToCode === undefined ? "private" : "secondary"}
+        />
+      </StyledLinksWrapper>
+    </StyledWorkDisplayInfo>
+  );
+};
 
 export default WorkDisplayInfo;

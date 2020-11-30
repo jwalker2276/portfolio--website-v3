@@ -29,11 +29,13 @@ const StyledWorkDisplayImage = styled(animated.div)<WorkDisplayImageProps>`
 const WorkDisplayImage = ({
   imagesource,
   style,
-}: WorkDisplayImageProps): JSX.Element => (
-  <StyledWorkDisplayImage
-    imagesource={imagesource}
-    style={style}
-  ></StyledWorkDisplayImage>
-);
+}: WorkDisplayImageProps): JSX.Element => {
+  return (
+    <StyledWorkDisplayImage
+      imagesource={imagesource}
+      style={style}
+    ></StyledWorkDisplayImage>
+  );
+};
 
 export default WorkDisplayImage;

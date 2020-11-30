@@ -53,12 +53,12 @@ const WorkDisplay = ({
   // React Spring
   const [index, setPage] = useState(0);
   const onClick = useCallback(() => {
-    setPage((pageState) => (pageState + 1) % 2);
+    setPage((pageState) => (pageState === 1 ? 0 : 1));
   }, []);
   const transitions = useTransition(index, (p) => p, {
-    from: { opacity: 0, transform: "translate3d(0,100%,0)" },
-    enter: { opacity: 1, transform: "translate3d(0%,0%,0)" },
-    leave: { opacity: 0, transform: "translate3d(0,-50%,0)" },
+    from: { opacity: 0, transform: "translate3d(100%,0%,0%)" },
+    enter: { opacity: 1, transform: "translate3d(0%,0%,0%)" },
+    leave: { opacity: 0, transform: "translate3d(-50%,0%,0%)" },
   });
 
   return (

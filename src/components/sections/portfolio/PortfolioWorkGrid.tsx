@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import WorkDisplay from "./WorkDisplay";
 // Images
@@ -71,14 +71,29 @@ const StyledPortfolioWorkGridOther = styled.div`
   grid-gap: 8px;
 
   @media ${device.tablet} {
-    min-width: 100%;
-    min-height: 100%;
+    display: none;
   }
 `;
 
 const PortfolioWorkGrid = (): JSX.Element => {
+  // State
+  const [isDeterminingScreenSize, setIsProcessing] = useState(true);
+
   // Custom hook
-  const screenSize = useScreenWidth();
+  let screenSize = useScreenWidth();
+
+  useEffect(() => {
+    if (screenSize !== undefined) setIsProcessing(false);
+
+    return (): void => {
+      screenSize = undefined;
+      setIsProcessing(true);
+    };
+  }, []);
+
+  if (isDeterminingScreenSize || screenSize === undefined) {
+    return <p>Loading...</p>;
+  }
 
   if (screenSize === "large") {
     return (

@@ -7,7 +7,7 @@ const useScreenWidth = (maxWidth = 768): string => {
 
   useEffect(() => {
     const updatedLayoutSize = (): void => {
-      if (window.innerWidth < maxWidth) {
+      if (window.innerWidth <= maxWidth) {
         setScreenLayoutType("small");
       } else {
         setScreenLayoutType("large");
@@ -22,6 +22,7 @@ const useScreenWidth = (maxWidth = 768): string => {
 
       // Cleanup on unmount
       return (): void => {
+        setScreenLayoutType(undefined);
         window.removeEventListener("resize", updatedLayoutSize);
       };
     }

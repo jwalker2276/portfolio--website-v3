@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { useSpring } from "react-spring";
 import SectionHeader from "../common/SectionHeader";
@@ -85,8 +85,24 @@ const AboutSection = (): JSX.Element => {
     config: { mass: 100, tension: 1550, friction: 500 },
   }));
 
-  // Custom hook called
-  const screenSize = useScreenWidth();
+  // State
+  const [isDeterminingScreenSize, setIsProcessing] = useState(true);
+
+  // Custom hook
+  let screenSize = useScreenWidth();
+
+  useEffect(() => {
+    if (screenSize !== undefined) setIsProcessing(false);
+
+    return (): void => {
+      screenSize = undefined;
+      setIsProcessing(true);
+    };
+  }, []);
+
+  if (isDeterminingScreenSize || screenSize === undefined) {
+    return <p>Loading...</p>;
+  }
 
   return (
     <StyledAboutSection
