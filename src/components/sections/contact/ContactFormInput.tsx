@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 type ContactFormInputProps = {
+  idName: string;
   inputType: string;
   inputName: string;
   inputOnChangeEvent: (e: React.FormEvent<HTMLInputElement>) => void;
@@ -23,6 +24,7 @@ const StyledContactFormInput = styled.input`
 `;
 
 const ContactFormInput = ({
+  idName,
   inputType,
   inputName,
   inputOnChangeEvent,
@@ -31,6 +33,7 @@ const ContactFormInput = ({
   placeholderText,
 }: ContactFormInputProps): JSX.Element => (
   <StyledContactFormInput
+    id={idName}
     type={inputType}
     name={inputName}
     onChange={inputOnChangeEvent}

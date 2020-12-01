@@ -13,7 +13,7 @@ const StyledAboutRowStaticIcons = styled.img`
 const AboutRowStaticIcons = ({
   imageSource,
 }: AboutRowStaticIconsProps): JSX.Element => (
-  <StyledAboutRowStaticIcons src={imageSource} />
+  <StyledAboutRowStaticIcons src={imageSource} alt="code icon" />
 );
 
 export default AboutRowStaticIcons;

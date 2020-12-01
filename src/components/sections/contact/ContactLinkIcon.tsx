@@ -22,7 +22,7 @@ const ContactLinkIcon = ({
   icon,
   imageAlt,
 }: ContactLinkIconProps): JSX.Element => (
-  <StyledContactLinkIcon src={icon} alt={imageAlt} />
+  <StyledContactLinkIcon src={icon} alt={imageAlt} width="24px" height="24px" />
 );
 
 export default ContactLinkIcon;

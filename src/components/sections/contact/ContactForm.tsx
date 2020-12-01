@@ -1,9 +1,10 @@
-import React, { useReducer } from "react";
+import React, { useReducer, useRef, useState } from "react";
 import styled from "styled-components";
 import ContactFormLabel from "./ContactFormLabel";
 import ContactFormInput from "./ContactFormInput";
 import ContactFormTextArea from "./ContactFormTextArea";
 import PrimaryCallToAction from "../../common/buttons/PrimaryCallToAction";
+import SentButton from "../../common/buttons/SentButton";
 
 type FormState = typeof initialState;
 
@@ -18,16 +19,6 @@ const StyledContactForm = styled.form`
   height: 100%;
 `;
 
-const formReducer = (state: FormState, action: Action): FormState => {
-  switch (action.type) {
-    case "field": {
-      return { ...state, [action.field]: action.value };
-    }
-    default:
-      return state;
-  }
-};
-
 // Initial Form State
 const initialState = {
   username: "",
@@ -36,23 +27,82 @@ const initialState = {
   message: "",
 };
 
+const formReducer = (state: FormState, action: Action): FormState => {
+  switch (action.type) {
+    case "field": {
+      return { ...state, [action.field]: action.value };
+    }
+    case "reset": {
+      return initialState;
+    }
+    default:
+      return state;
+  }
+};
+
 // Component
 const ContactForm = (): JSX.Element => {
   // State
   const [state, dispatch] = useReducer(formReducer, initialState);
   const { username, email, project, message } = state;
 
+  // Button state
+  const [isSent, setIsSent] = useState(false);
+
+  // Ref to form
+  const formRef = useRef(null);
+
+  // Form types
+  type formDataProps = {
+    username: string;
+    email: string;
+    project: string;
+    message: string;
+    "form-name": string;
+  };
+
+  // Encode form data for netlify
+  const encode = (data: formDataProps): string => {
+    return Object.keys(data)
+      .map(
+        (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+      )
+      .join("&");
+  };
+
   // Submit Event
   const onSubmit = (e: React.FormEvent): void => {
     e.preventDefault();
 
-    console.log("Submitted", state);
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({
+        "form-name": formRef.current.getAttribute("name"),
+        ...state,
+      }),
+    })
+      .then(() => {
+        dispatch({ type: "reset", field: "all", value: "" });
+        setIsSent(true);
+      })
+      .catch((error) => console.error(error));
   };
 
   return (
-    <StyledContactForm onSubmit={onSubmit}>
+    <StyledContactForm
+      onSubmit={onSubmit}
+      method="post"
+      netlify-honeypot="bot-field"
+      data-netlify="true"
+      name="contact"
+      ref={formRef}
+    >
+      <input type="hidden" name="bot-field" />
+      <input type="hidden" name="form-name" value="contact" />
       <ContactFormLabel forValue="name" labelText="Name" />
       <ContactFormInput
+        idName="name"
         inputType="text"
         inputName="name"
         inputOnChangeEvent={(e): void =>
@@ -67,6 +117,7 @@ const ContactForm = (): JSX.Element => {
       />
       <ContactFormLabel forValue="email" labelText="Email" />
       <ContactFormInput
+        idName="email"
         inputType="email"
         inputName="email"
         inputOnChangeEvent={(e): void =>
@@ -84,6 +135,7 @@ const ContactForm = (): JSX.Element => {
         labelText="What are you working on?"
       />
       <ContactFormInput
+        idName="project"
         inputType="text"
         inputName="project"
         inputOnChangeEvent={(e): void =>
@@ -98,6 +150,7 @@ const ContactForm = (): JSX.Element => {
       />
       <ContactFormLabel forValue="message" labelText="Message" />
       <ContactFormTextArea
+        idName="message"
         inputName="message"
         inputOnChangeEvent={(e): void =>
           dispatch({
@@ -109,7 +162,8 @@ const ContactForm = (): JSX.Element => {
         inputValue={message}
         placeholderText="I need ..."
       />
-      <PrimaryCallToAction buttonText="Send" />
+      {isSent && <SentButton />}
+      {isSent === false && <PrimaryCallToAction buttonText="Send" />}
     </StyledContactForm>
   );
 };

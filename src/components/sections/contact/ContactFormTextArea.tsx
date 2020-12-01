@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 type ContactFormTextAreaProps = {
+  idName: string;
   inputName: string;
   inputOnChangeEvent: (e: React.FormEvent<HTMLTextAreaElement>) => void;
   inputValue: string;
@@ -22,12 +23,14 @@ const StyledContactFormTextArea = styled.textarea`
 `;
 
 const ContactFormTextArea = ({
+  idName,
   inputName,
   inputOnChangeEvent,
   inputValue,
   placeholderText,
 }: ContactFormTextAreaProps): JSX.Element => (
   <StyledContactFormTextArea
+    id={idName}
     rows={5}
     cols={33}
     name={inputName}

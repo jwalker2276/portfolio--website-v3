@@ -30,6 +30,7 @@ const SEO = ({ title, description, image, article }: SEOProps): JSX.Element => {
 
   return (
     <Helmet title={seo.title}>
+      <html lang="en" />
       {/* <!-- Primary Meta Tags --> */}
       <meta name="description" content={seo.description} />
       <meta name="image" content={seo.image} />
@@ -72,7 +73,7 @@ const query = graphql`
       siteMetadata {
         defaultTitle: title
         defaultDescription: description
-        siteUrl: url
+        siteUrl: siteUrl
         defaultImage: image
         author: author
       }

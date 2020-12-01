@@ -3,7 +3,7 @@ module.exports = {
     title: `Jordan Walker | Full-stack Web Developer`,
     description: `Full-stack web developer experienced in developing web applications using modern tools.`,
     author: `Jordan Walker`,
-    url: `https://www.jordanwalker.dev`,
+    siteUrl: `https://www.jordanwalker.dev`,
     image: `/images/site_main.png`,
   },
   plugins: [
@@ -27,6 +27,13 @@ module.exports = {
         theme_color: `#1f2933`,
         display: `standalone`,
         icon: `src/images/logo_color.svg`, // This path is relative to the root of the site.
+      },
+    },
+    "gatsby-plugin-sitemap",
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        policy: [{ userAgent: "*", allow: "/" }],
       },
     },
     {

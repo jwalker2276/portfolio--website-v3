@@ -25,7 +25,7 @@ const StyledSVG = styled.svg<LogoProps>`
 
 const StyledLogoLink = ({ sizeVarient }: LogoProps): JSX.Element => {
   return (
-    <StyledLink to="/">
+    <StyledLink to="/" aria-label="home page">
       <StyledSVG
         sizeVarient={sizeVarient}
         viewBox="0 0 255 255"

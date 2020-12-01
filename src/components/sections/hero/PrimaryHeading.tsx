@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { device } from "../../../breakpoints";
 
-const StyledPrimaryHeading = styled.h1`
+const StyledPrimaryHeading = styled.h2`
   font-size: 36px;
   font-weight: 600;
   color: var(--neutral--color-000);

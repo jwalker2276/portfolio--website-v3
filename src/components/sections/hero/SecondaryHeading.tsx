@@ -10,7 +10,7 @@ const StyledSecondaryHeadingWrapper = styled.div`
   margin: 0 0 12px 0;
 `;
 
-const StyledSecondaryHeading = styled.h2`
+const StyledSecondaryHeading = styled.h1`
   font-size: 16px;
   font-weight: 400;
   color: var(--primary--color-100);

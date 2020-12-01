@@ -9,7 +9,7 @@ type ButtonProps = {
 
 const StyledPrimaryCallToActionButton = styled.button`
   background-color: var(--primary--color-600);
-  color: var(--primary--color-000);
+  color: var(--neutral--color-000);
   border: none;
   border-radius: 5px;
   font-size: 14px;
@@ -17,11 +17,12 @@ const StyledPrimaryCallToActionButton = styled.button`
   width: 96px;
   height: 36px;
   cursor: pointer;
+  text-shadow: 0 0 10px var(--neutral--color-900);
 `;
 
 const StyledPrimaryCallToActionLink = styled.a`
   background-color: var(--primary--color-600);
-  color: var(--primary--color-000);
+  color: var(--neutral--color-000);
   border: none;
   border-radius: 5px;
   font-size: 14px;
@@ -31,6 +32,7 @@ const StyledPrimaryCallToActionLink = styled.a`
   padding: 10px 12px;
   cursor: pointer;
   text-decoration: none;
+  text-shadow: 0 0 10px var(--neutral--color-900);
 `;
 
 const StyledButtonArrow = styled.svg`
