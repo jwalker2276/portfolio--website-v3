@@ -21,7 +21,7 @@ const StyledContactForm = styled.form`
 
 // Initial Form State
 const initialState = {
-  username: "",
+  name: "",
   email: "",
   project: "",
   message: "",
@@ -44,7 +44,7 @@ const formReducer = (state: FormState, action: Action): FormState => {
 const ContactForm = (): JSX.Element => {
   // State
   const [state, dispatch] = useReducer(formReducer, initialState);
-  const { username, email, project, message } = state;
+  const { name, email, project, message } = state;
 
   // Button state
   const [isSent, setIsSent] = useState(false);
@@ -54,7 +54,7 @@ const ContactForm = (): JSX.Element => {
 
   // Form types
   type formDataProps = {
-    username: string;
+    name: string;
     email: string;
     project: string;
     message: string;
@@ -108,11 +108,11 @@ const ContactForm = (): JSX.Element => {
         inputOnChangeEvent={(e): void =>
           dispatch({
             type: "field",
-            field: "username",
+            field: "name",
             value: e.currentTarget.value,
           })
         }
-        inputValue={username}
+        inputValue={name}
         placeholderText="Fullname"
       />
       <ContactFormLabel forValue="email" labelText="Email" />
