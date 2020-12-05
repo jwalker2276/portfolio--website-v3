@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import WorkDisplayAction from "./WorkDisplayAction";
 
@@ -16,7 +16,6 @@ const selectionEvent = (selectionName: string): void => {
   console.log(`Clicked ${selectionName} button`);
 };
 
-// TODO : Add filtering actions.
 const PortfolioWorkDisplayActions = (): JSX.Element => {
   // const [eventName, setName] = useState("all");
 
