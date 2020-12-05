@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { device } from "../../../breakpoints";
-import bkImage from "../../../images/three_body.png";
+import bkImage from "../../../images/three_body_v2.png";
 
 type BorderImageSkillsetProps = {
   backgroundImage: string;

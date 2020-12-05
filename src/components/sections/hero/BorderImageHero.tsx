@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { device } from "../../../breakpoints";
-import bkImage from "../../../images/sun.png";
+import bkImage from "../../../images/sun_v2.png";
 
 type BorderImageHeroProps = {
   backgroundImage: string;

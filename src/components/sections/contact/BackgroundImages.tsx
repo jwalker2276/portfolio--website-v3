@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import ImageTop from "../../../images/two_body_2.png";
-import ImageRight from "../../../images/two_body.png";
-import ImageBottom from "../../../images/four_body.png";
+import ImageTop from "../../../images/two_body_2_v2.png";
+import ImageRight from "../../../images/two_body_v2.png";
+import ImageBottom from "../../../images/four_body_v2.png";
 import { device } from "../../../breakpoints";
 
 type BackgroundImagesProps = {

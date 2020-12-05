@@ -7,7 +7,7 @@ import SecondaryHeading from "./SecondaryHeading";
 import PrimaryCallToAction from "../../common/buttons/PrimaryCallToAction";
 import BackgroundImageHero from "./BackgroundImageHero";
 import BorderImageHero from "./BorderImageHero";
-import bkImage from "../../../images/hero_bk.png";
+import bkImage from "../../../images/hero_bk_v2.png";
 
 type HeroSectionProps = {
   backgroundImage: string;

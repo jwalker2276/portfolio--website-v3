@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { device } from "../../../breakpoints";
-import bkImage from "../../../images/hero_bk.png";
+import bkImage from "../../../images/hero_bk_v2.png";
 
 type BackgroundImageHeroProps = {
   backgroundImage: string;
