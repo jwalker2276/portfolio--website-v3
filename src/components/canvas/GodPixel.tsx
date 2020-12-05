@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
 
-// TODO : Clean up this code with you have time.
+// TODO : Clean up this code when you have time.
 
 const StyledDivWrapper = styled.div`
   overflow: hidden;

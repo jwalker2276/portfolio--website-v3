@@ -32,7 +32,7 @@ const PortfolioSection = (): JSX.Element => (
     />
     <PortfolioWorkDisplay />
     <StyledButtonWrapper>
-      <PrimaryCallToActionButton buttonText="Resume" buttonType="link" />
+      <PrimaryCallToActionButton buttonText="Linkedin" buttonType="link" />
     </StyledButtonWrapper>
   </StyledPortfolioSection>
 );

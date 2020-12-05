@@ -18,6 +18,8 @@ type WorkDisplayProps = {
 const StyledWorkDisplay = styled.div<Pick<WorkDisplayProps, "gridArea">>`
   grid-area: ${(props): string => props.gridArea};
   position: relative;
+  border: 2px solid var(--neutral--color-800);
+  border-radius: 5px;
 
   @media ${device.tablet} {
     width: 100%;
