@@ -4,7 +4,7 @@ module.exports = {
     description: `Full-stack web developer experienced in developing web applications using modern tools.`,
     author: `Jordan Walker`,
     siteUrl: `https://www.jordanwalker.dev`,
-    image: `/images/site_main.png`,
+    image: `/site_main.png`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
