@@ -134,7 +134,7 @@ const PortfolioWorkGrid = (): JSX.Element => {
           />
           <WorkDisplay
             imagesource={canvasAnimationImage}
-            linkToProject="localhost:8000/animation"
+            linkToProject="https://www.jordanwalker.dev/animation"
             linkToCode="https://github.com/jwalker2276/portfolio--website-v3/blob/master/src/components/canvas/GodPixel.tsx"
             projectName="Web Page Animations"
             projectType="Canvas Animation"
@@ -180,7 +180,7 @@ const PortfolioWorkGrid = (): JSX.Element => {
           />
           <WorkDisplay
             imagesource={canvasAnimationImage}
-            linkToProject="https://www.jwalkercreations.com/"
+            linkToProject="https://www.jordanwalker.dev/animation"
             linkToCode="https://github.com/jwalker2276/portfolio--website-v3/blob/master/src/components/canvas/GodPixel.tsx"
             projectName="Web Page Animations"
             projectType="Canvas Animation"
