@@ -1,8 +1,8 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/e3e06614-71dc-4af3-a85b-39021b696985/deploy-status)](https://app.netlify.com/sites/cranky-aryabhata-234133/deploys)
-
 # Portfolio
 
 ## Link to project
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/e3e06614-71dc-4af3-a85b-39021b696985/deploy-status)](https://app.netlify.com/sites/cranky-aryabhata-234133/deploys)
 
 <https://www.jordanwalker.dev/>
 
