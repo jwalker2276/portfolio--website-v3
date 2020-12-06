@@ -25,7 +25,7 @@ const rowOneText =
 
 const rowTwoTitle = "Unique Web Sites";
 const rowTwoText =
-  "Want something more unique than most websites, great. I can create optimized websites that make your brand stand out and be recognized.";
+  "Need something more unique than most websites, great. I can formulate optimized websites that make your brand stand out.";
 
 const rowThreeTitle = "Feature Development";
 const rowThreeText =

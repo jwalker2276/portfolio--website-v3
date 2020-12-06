@@ -120,7 +120,7 @@ const PortfolioWorkGrid = (): JSX.Element => {
             imagesource={vindecoderImage}
             linkToProject="https://www.vindecodeapp.com/"
             linkToCode="https://github.com/jwalker2276/vinDecode"
-            projectName="Vindecoder"
+            projectName="Vin Decoder"
             projectType="Web Application"
             gridArea="otherOne"
           />
