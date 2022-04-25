@@ -6,7 +6,6 @@ import rateTeamMateImage from "../../../images/rtm_ss_1.jpg";
 import vindecoderImage from "../../../images/vindecoder_ss_1.jpg";
 import downshiftImage from "../../../images/downshift_ss_1.jpg";
 import canvasAnimationImage from "../../../images/canvas_animation_ss_1.jpg";
-import devlistImage from "../../../images/devlist_ss_1.jpg";
 import { device } from "../../../breakpoints";
 import useScreenWidth from "../../../customhooks/useScreenWidth";
 
@@ -83,10 +82,9 @@ const PortfolioWorkGrid = (): JSX.Element => {
   let screenSize = useScreenWidth();
 
   useEffect(() => {
-    if (screenSize !== undefined) setIsProcessing(false);
+    if (screenSize) setIsProcessing(false);
 
     return (): void => {
-      screenSize = undefined;
       setIsProcessing(true);
     };
   }, []);
@@ -125,11 +123,11 @@ const PortfolioWorkGrid = (): JSX.Element => {
             gridArea="otherOne"
           />
           <WorkDisplay
-            imagesource={devlistImage}
-            linkToProject="https://www.devlistapp.com/"
-            linkToCode="https://github.com/jwalker2276/devList"
-            projectName="DevList"
-            projectType="Web Application"
+            imagesource={canvasAnimationImage}
+            linkToProject="https://www.jordanwalker.dev/"
+            linkToCode="https://github.com/jwalker2276"
+            projectName="More Coming Soon"
+            projectType=""
             gridArea="otherTwo"
           />
           <WorkDisplay
@@ -166,16 +164,16 @@ const PortfolioWorkGrid = (): JSX.Element => {
             imagesource={vindecoderImage}
             linkToProject="https://www.vindecodeapp.com/"
             linkToCode="https://github.com/jwalker2276/vinDecode"
-            projectName="Vindecoder"
+            projectName="Vin Decoder"
             projectType="Web Application"
             gridArea="otherOne"
           />
           <WorkDisplay
-            imagesource={devlistImage}
-            linkToProject="https://www.devlistapp.com/"
-            linkToCode="https://github.com/jwalker2276/devList"
-            projectName="DevList"
-            projectType="Web Application"
+            imagesource={canvasAnimationImage}
+            linkToProject="https://www.jordanwalker.dev/"
+            linkToCode="https://github.com/jwalker2276"
+            projectName="More Coming Soon"
+            projectType=""
             gridArea="otherTwo"
           />
           <WorkDisplay
