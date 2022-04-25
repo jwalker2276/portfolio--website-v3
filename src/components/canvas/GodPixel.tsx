@@ -15,11 +15,17 @@ const StyledCanvas = styled.canvas``;
 
 const GodPixel = (): JSX.Element => {
   // Ref to canvas element
+  let canvas: HTMLCanvasElement | null = document.querySelector("canvas");
+  let ctx: CanvasRenderingContext2D | null;
+
+  if (canvas) {
+    ctx = canvas.getContext("2d");
+  }
 
   let screenWidth: number;
   let screenHeight: number;
 
-  let btn: HTMLElement | null;
+  let btn: HTMLButtonElement | null;
   let btnObj;
 
   const circleFillColor = "#e3f8ff";
@@ -33,8 +39,6 @@ const GodPixel = (): JSX.Element => {
     y: 0,
     radius: 5,
   };
-
-  let ctx: CanvasRenderingContext2D | null | undefined;
 
   // Class
   class Pixel {
@@ -89,41 +93,40 @@ const GodPixel = (): JSX.Element => {
     }
 
     line(): void {
-      const connectionRadius = 200;
+      if (ctx) {
+        const connectionRadius = 200;
 
-      for (let i = 0; i < pixelsArray.length; i++) {
-        const pX = pixelsArray[i].x;
-        const pY = pixelsArray[i].y;
+        for (let i = 0; i < pixelsArray.length; i++) {
+          const pX = pixelsArray[i].x;
+          const pY = pixelsArray[i].y;
 
-        //Check for connections
-        if (
-          godPixel.x - pX < connectionRadius &&
-          godPixel.x - pX > -connectionRadius
-        ) {
+          //Check for connections
           if (
-            godPixel.y - pY < connectionRadius &&
-            godPixel.y - pY > -connectionRadius &&
-            ctx
+            godPixel.x - pX < connectionRadius &&
+            godPixel.x - pX > -connectionRadius
           ) {
-            ctx.beginPath();
-            ctx.moveTo(godPixel.x, godPixel.y);
-            ctx.lineTo(pX, pY);
-            ctx.strokeStyle = lineColor;
-            ctx.stroke();
+            if (
+              godPixel.y - pY < connectionRadius &&
+              godPixel.y - pY > -connectionRadius
+            ) {
+              ctx.beginPath();
+              ctx.moveTo(godPixel.x, godPixel.y);
+              ctx.lineTo(pX, pY);
+              ctx.strokeStyle = lineColor;
+              ctx.stroke();
+            }
           }
         }
       }
     }
   }
 
-  let canvas: HTMLCanvasElement | null = document.querySelector("canvas");
-
   // Setup
   const init = (): void => {
-    if (!canvas) return;
-
-    canvas.width = screenWidth;
-    canvas.height = screenHeight;
+    if (canvas) {
+      canvas.width = screenWidth;
+      canvas.height = screenHeight;
+    }
 
     // Get btn positions
     if (btn) {
@@ -203,14 +206,21 @@ const GodPixel = (): JSX.Element => {
     };
 
     const startUp = (): void => {
-      ctx = canvas?.getContext("2d");
+      canvas = document.querySelector("canvas");
 
-      if (ctx) {
+      if (canvas) {
+        ctx = canvas.getContext("2d");
+      }
+
+      if (ctx && btn) {
         ctx.lineWidth = 0.5;
       }
 
       btn = document.querySelector("#btn--back_button");
-      btnObj = btn?.getBoundingClientRect();
+
+      if (btn) {
+        btnObj = btn.getBoundingClientRect();
+      }
 
       updateElementSizes();
     };
@@ -228,6 +238,7 @@ const GodPixel = (): JSX.Element => {
         startUp();
       });
     };
+    // @ts-ignore
   }, [canvas, ctx]);
 
   return (
