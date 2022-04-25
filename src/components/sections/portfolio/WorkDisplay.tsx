@@ -38,16 +38,13 @@ const WorkDisplay = ({
 }: WorkDisplayProps): JSX.Element => {
   // Pages for react spring
   const pages = [
-    ({ style }): JSX.Element => (
-      <WorkDisplayImage imagesource={imagesource} style={{ ...style }} />
-    ),
-    ({ style }): JSX.Element => (
+    (): JSX.Element => <WorkDisplayImage imagesource={imagesource} />,
+    (): JSX.Element => (
       <WorkDisplayInfo
         linkToProject={linkToProject}
         linkToCode={linkToCode}
         projectName={projectName}
         projectType={projectType}
-        style={{ ...style }}
       />
     ),
   ];
@@ -67,7 +64,7 @@ const WorkDisplay = ({
     <StyledWorkDisplay gridArea={gridArea} onClick={onClick}>
       {transitions.map(({ item, props, key }) => {
         const Page = pages[item];
-        return <Page key={key} style={props} />;
+        return <Page key={key} />;
       })}
     </StyledWorkDisplay>
   );

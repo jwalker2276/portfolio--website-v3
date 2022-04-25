@@ -5,7 +5,6 @@ import { device } from "../../../breakpoints";
 
 type WorkDisplayImageProps = {
   imagesource: string;
-  style: React.CSSProperties;
 };
 
 const StyledWorkDisplayImage = styled(animated.div)<WorkDisplayImageProps>`
@@ -28,13 +27,9 @@ const StyledWorkDisplayImage = styled(animated.div)<WorkDisplayImageProps>`
 
 const WorkDisplayImage = ({
   imagesource,
-  style,
 }: WorkDisplayImageProps): JSX.Element => {
   return (
-    <StyledWorkDisplayImage
-      imagesource={imagesource}
-      style={style}
-    ></StyledWorkDisplayImage>
+    <StyledWorkDisplayImage imagesource={imagesource}></StyledWorkDisplayImage>
   );
 };
 

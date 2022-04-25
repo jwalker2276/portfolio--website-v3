@@ -9,7 +9,6 @@ type WorkDisplayInfoProps = {
   linkToCode?: string;
   projectName: string;
   projectType: string;
-  style: React.CSSProperties;
 };
 
 const StyledWorkDisplayInfo = styled(animated.div)`
@@ -62,10 +61,9 @@ const WorkDisplayInfo = ({
   linkToCode,
   projectName,
   projectType,
-  style,
 }: WorkDisplayInfoProps): JSX.Element => {
   return (
-    <StyledWorkDisplayInfo style={style}>
+    <StyledWorkDisplayInfo>
       <StyledProjectName>{projectName}</StyledProjectName>
       <StyledProjectType>{projectType}</StyledProjectType>
       <StyledLinksWrapper>
