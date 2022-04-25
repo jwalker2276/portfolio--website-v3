@@ -4,14 +4,14 @@ import styled from "styled-components";
 import { device } from "../../breakpoints";
 
 type LogoProps = {
-  sizeVarient?: string;
+  sizeVariant?: string;
 };
 
 const StyledLink = styled(Link)``;
 
 const StyledSVG = styled.svg<LogoProps>`
   width: ${(props): string =>
-    props.sizeVarient === "large" ? "75px" : "30px"};
+    props.sizeVariant === "large" ? "75px" : "30px"};
   fill: var(--primary--color-100);
   @media ${device.tablet} {
     width: 50px;
@@ -21,11 +21,11 @@ const StyledSVG = styled.svg<LogoProps>`
   } ;
 `;
 
-const StyledLogoLink = ({ sizeVarient }: LogoProps): JSX.Element => {
+const StyledLogoLink = ({ sizeVariant }: LogoProps): JSX.Element => {
   return (
     <StyledLink to="/" aria-label="home page">
       <StyledSVG
-        sizeVarient={sizeVarient}
+        sizeVariant={sizeVariant}
         viewBox="0 0 255 255"
         xmlns="http://www.w3.org/2000/svg"
         fill-rule="evenodd"

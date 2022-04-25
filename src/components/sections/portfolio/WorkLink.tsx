@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 type WorkLinkProps = {
-  varient: string;
+  variant: string;
   link?: string;
 };
 
@@ -48,8 +48,8 @@ const StyledWorkLinkPrivate = styled.a`
   text-align: center;
 `;
 
-const WorkLink = ({ varient, link }: WorkLinkProps): JSX.Element => {
-  if (varient === "primary") {
+const WorkLink = ({ variant, link }: WorkLinkProps): JSX.Element => {
+  if (variant === "primary") {
     return (
       <StyledWorkLinkPrimary
         href={link}
@@ -59,7 +59,7 @@ const WorkLink = ({ varient, link }: WorkLinkProps): JSX.Element => {
         View Project
       </StyledWorkLinkPrimary>
     );
-  } else if (varient === "private") {
+  } else if (variant === "private") {
     return (
       <StyledWorkLinkPrivate
         href="https://github.com/jwalker2276"

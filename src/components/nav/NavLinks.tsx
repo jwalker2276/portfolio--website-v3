@@ -4,7 +4,7 @@ import { device } from "../../breakpoints";
 import NavButton from "./NavButton";
 
 type NavLinksProps = {
-  varient?: string;
+  variant?: string;
 };
 
 const StyledNavLinks = styled.nav`
@@ -31,8 +31,8 @@ const StyledNavLinksTop = styled.nav`
   column-gap: 24px;
 `;
 
-const NavLinks = ({ varient }: NavLinksProps): JSX.Element => {
-  if (varient === "top nav") {
+const NavLinks = ({ variant }: NavLinksProps): JSX.Element => {
+  if (variant === "top nav") {
     return (
       <StyledNavLinksTop>
         <NavButton buttonText="Skillset" sectionId="skillset" />

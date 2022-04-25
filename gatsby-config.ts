@@ -8,7 +8,7 @@ const config: GatsbyConfig = {
     siteUrl: `https://www.jordanwalker.dev`,
     image: `/site_main.png`,
   },
-  plugins: ["gatsby-plugin-styled-components"],
+  plugins: ["gatsby-plugin-styled-components", "gatsby-plugin-react-helmet"],
 };
 
 export default config;

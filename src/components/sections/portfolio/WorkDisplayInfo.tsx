@@ -69,11 +69,11 @@ const WorkDisplayInfo = ({
       <StyledProjectName>{projectName}</StyledProjectName>
       <StyledProjectType>{projectType}</StyledProjectType>
       <StyledLinksWrapper>
-        <WorkLink link={linkToProject} varient="primary" />
+        <WorkLink link={linkToProject} variant="primary" />
 
         <WorkLink
           link={linkToCode}
-          varient={linkToCode === undefined ? "private" : "secondary"}
+          variant={linkToCode === undefined ? "private" : "secondary"}
         />
       </StyledLinksWrapper>
     </StyledWorkDisplayInfo>
