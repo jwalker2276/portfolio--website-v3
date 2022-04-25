@@ -92,10 +92,9 @@ const AboutSection = (): JSX.Element => {
   let screenSize = useScreenWidth();
 
   useEffect(() => {
-    if (screenSize !== undefined) setIsProcessing(false);
+    if (screenSize) setIsProcessing(false);
 
     return (): void => {
-      screenSize = undefined;
       setIsProcessing(true);
     };
   }, []);
