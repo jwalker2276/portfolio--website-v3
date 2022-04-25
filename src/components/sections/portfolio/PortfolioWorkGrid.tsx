@@ -6,6 +6,7 @@ import rateTeamMateImage from "../../../images/rtm_ss_1.jpg";
 import vindecoderImage from "../../../images/vindecoder_ss_1.jpg";
 import downshiftImage from "../../../images/downshift_ss_1.jpg";
 import canvasAnimationImage from "../../../images/canvas_animation_ss_1.jpg";
+import placeHolderImage from "../../../images/placeholder_ss_1.png";
 import { device } from "../../../breakpoints";
 import useScreenWidth from "../../../customhooks/useScreenWidth";
 
@@ -123,7 +124,7 @@ const PortfolioWorkGrid = (): JSX.Element => {
             gridArea="otherOne"
           />
           <WorkDisplay
-            imagesource={canvasAnimationImage}
+            imagesource={placeHolderImage}
             linkToProject="https://www.jordanwalker.dev/"
             linkToCode="https://github.com/jwalker2276"
             projectName="More Coming Soon"
