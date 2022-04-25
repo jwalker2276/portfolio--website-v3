@@ -1,8 +1,6 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
 
-// TODO : Clean up this code when you have time.
-
 const StyledDivWrapper = styled.div`
   overflow: hidden;
   position: absolute;
@@ -17,26 +15,26 @@ const StyledCanvas = styled.canvas``;
 
 const GodPixel = (): JSX.Element => {
   // Ref to canvas element
-  let canvas;
-  let ctx;
 
-  let screenWidth;
-  let screenHeight;
+  let screenWidth: number;
+  let screenHeight: number;
 
-  let btn;
+  let btn: HTMLElement | null;
   let btnObj;
 
   const circleFillColor = "#e3f8ff";
   const circleStrokeColor = "#1992d4";
   const lineColor = "rgba(229, 32, 32, .3)";
 
-  let pixelsArray = [];
+  let pixelsArray: Pixel[] = [];
 
   const godPixel = {
     x: 0,
     y: 0,
     radius: 5,
   };
+
+  let ctx: CanvasRenderingContext2D | null | undefined;
 
   // Class
   class Pixel {
@@ -46,7 +44,7 @@ const GodPixel = (): JSX.Element => {
     dy = 0;
     radius = 0;
 
-    constructor(x, y, dx, dy, radius) {
+    constructor(x: number, y: number, dx: number, dy: number, radius: number) {
       this.x = x;
       this.y = y;
       this.dx = dx;
@@ -55,12 +53,14 @@ const GodPixel = (): JSX.Element => {
     }
 
     draw(): void {
-      ctx.beginPath();
-      ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
-      ctx.fillStyle = circleFillColor;
-      ctx.fill();
-      ctx.strokeStyle = circleStrokeColor;
-      ctx.stroke();
+      if (ctx) {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
+        ctx.fillStyle = circleFillColor;
+        ctx.fill();
+        ctx.strokeStyle = circleStrokeColor;
+        ctx.stroke();
+      }
     }
 
     update(): void {
@@ -102,7 +102,8 @@ const GodPixel = (): JSX.Element => {
         ) {
           if (
             godPixel.y - pY < connectionRadius &&
-            godPixel.y - pY > -connectionRadius
+            godPixel.y - pY > -connectionRadius &&
+            ctx
           ) {
             ctx.beginPath();
             ctx.moveTo(godPixel.x, godPixel.y);
@@ -115,15 +116,21 @@ const GodPixel = (): JSX.Element => {
     }
   }
 
+  let canvas: HTMLCanvasElement | null = document.querySelector("canvas");
+
   // Setup
   const init = (): void => {
+    if (!canvas) return;
+
     canvas.width = screenWidth;
     canvas.height = screenHeight;
 
     // Get btn positions
-    btnObj = btn.getBoundingClientRect();
-    godPixel.x = btnObj.x - btnObj.width / 2 + 50;
-    godPixel.y = btnObj.y - btnObj.height / 2 + 50;
+    if (btn) {
+      btnObj = btn.getBoundingClientRect();
+      godPixel.x = btnObj.x - btnObj.width / 2 + 50;
+      godPixel.y = btnObj.y - btnObj.height / 2 + 50;
+    }
 
     // Clear pixelArray
     pixelsArray = [];
@@ -160,21 +167,25 @@ const GodPixel = (): JSX.Element => {
   };
 
   const createGodPixel = (): void => {
-    ctx.beginPath();
-    ctx.arc(godPixel.x, godPixel.y, godPixel.radius, 0, Math.PI * 2, false);
-    ctx.fillStyle = circleStrokeColor;
-    ctx.fill();
+    if (ctx) {
+      ctx.beginPath();
+      ctx.arc(godPixel.x, godPixel.y, godPixel.radius, 0, Math.PI * 2, false);
+      ctx.fillStyle = circleStrokeColor;
+      ctx.fill();
+    }
   };
 
   const animate = (): void => {
-    requestAnimationFrame(animate);
-    ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+    if (ctx) {
+      requestAnimationFrame(animate);
+      ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
 
-    for (let i = 0; i < pixelsArray.length; i++) {
-      pixelsArray[i].line();
-      pixelsArray[i].update();
+      for (let i = 0; i < pixelsArray.length; i++) {
+        pixelsArray[i].line();
+        pixelsArray[i].update();
+      }
+      createGodPixel();
     }
-    createGodPixel();
   };
 
   useEffect(() => {
@@ -192,11 +203,14 @@ const GodPixel = (): JSX.Element => {
     };
 
     const startUp = (): void => {
-      canvas = document.querySelector("canvas");
-      ctx = canvas.getContext("2d");
-      ctx.lineWidth = 0.5;
+      ctx = canvas?.getContext("2d");
+
+      if (ctx) {
+        ctx.lineWidth = 0.5;
+      }
+
       btn = document.querySelector("#btn--back_button");
-      btnObj = btn.getBoundingClientRect();
+      btnObj = btn?.getBoundingClientRect();
 
       updateElementSizes();
     };
