@@ -170,7 +170,7 @@ const PortfolioWorkGrid = (): JSX.Element => {
             gridArea="otherOne"
           />
           <WorkDisplay
-            imagesource={canvasAnimationImage}
+            imagesource={placeHolderImage}
             linkToProject="https://www.jordanwalker.dev/"
             linkToCode="https://github.com/jwalker2276"
             projectName="More Coming Soon"
