@@ -3,7 +3,6 @@ import styled from "styled-components";
 import SectionHeader from "../common/SectionHeader";
 import SectionIntroText from "../common/SectionIntroText";
 import PrimaryContactMethod from "./PrimaryContactMethod";
-import SecondaryContactMethod from "./SecondaryContactMethod";
 import BackgroundImages from "./BackgroundImages";
 import { device } from "../../../breakpoints";
 
@@ -45,7 +44,6 @@ const SectionContact = (): JSX.Element => (
     <SectionIntroText displayText="I'd love to meet with you to discuss your ideas and potential collaborations." />
     <StyledSectionContactMethods>
       <PrimaryContactMethod />
-      <SecondaryContactMethod />
     </StyledSectionContactMethods>
   </StyledSectionContact>
 );
