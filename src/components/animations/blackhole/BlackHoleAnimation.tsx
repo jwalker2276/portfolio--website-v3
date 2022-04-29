@@ -2,96 +2,114 @@ import React from "react";
 import styled from "styled-components";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
+import { Container, Engine } from "tsparticles-engine";
 
 const StyledBlackHoleAnimation = styled.div`
-  border: 2px solid blue;
   width: 100%;
   height: 100%;
+  & #tsparticles {
+    height: 100%;
+    width: 100%;
+  }
 `;
 
 const BlackHoleAnimation = () => {
-  const particlesInit = async (main) => {
+  const particlesInit = async (main: Engine) => {
     await loadFull(main);
   };
-  const particlesLoaded = (container) => {
+
+  const particlesLoaded = (container: Container) => {
     console.log(container);
   };
+
   const options = {
-    fullScreen: false,
     background: {
-      color: {
-        value: "#0d48a10",
-      },
+      position: "50% 50%",
+      size: "cover",
+      repeat: "no-repeat",
     },
-    fpsLimit: 120,
-    interactivity: {
-      events: {
-        onClick: {
-          enable: false,
-          mode: "push",
-        },
-        onHover: {
-          enable: false,
-          mode: "repulse",
-        },
-        resize: true,
-      },
-      modes: {
-        push: {
-          quantity: 4,
-        },
-        repulse: {
-          distance: 200,
-          duration: 0.4,
-        },
-      },
+    fps_limit: 120,
+    fullScreen: {
+      enable: false,
     },
     particles: {
       color: {
-        value: "#ffffff",
-      },
-      links: {
-        color: "#ffffff",
-        distance: 150,
-        enable: false,
-        opacity: 0.5,
-        width: 1,
-      },
-      collisions: {
-        enable: false,
+        value: "#5f5f5f",
       },
       move: {
-        direction: "none",
+        attract: {
+          rotate: {
+            x: 600,
+            y: 1200,
+          },
+        },
         enable: true,
         outModes: {
-          default: "bounce",
+          bottom: "out",
+          left: "out",
+          right: "out",
+          top: "out",
         },
-        random: false,
-        speed: 1,
-        straight: false,
       },
       number: {
-        density: {
-          enable: true,
-          area: 800,
-        },
-        value: 80,
+        value: 100,
       },
       opacity: {
-        value: 0.5,
-      },
-      shape: {
-        type: "circle",
+        random: {
+          enable: true,
+        },
+        value: {
+          min: 0.1,
+          max: 0.5,
+        },
+        animation: {
+          enable: true,
+          speed: 0.5,
+          minimumValue: 0.1,
+        },
       },
       size: {
-        value: { min: 1, max: 3 },
+        random: {
+          enable: true,
+        },
+        value: {
+          min: 1,
+          max: 5,
+        },
+        animation: {
+          speed: 20,
+          minimumValue: 0.1,
+        },
       },
     },
-    detectRetina: true,
+    absorbers: {
+      color: {
+        value: "#161515",
+      },
+      draggable: false,
+      opacity: 1,
+      destroy: true,
+      orbits: false,
+      size: {
+        value: {
+          min: 5,
+          max: 5,
+        },
+        density: 5,
+        limit: {
+          radius: 10,
+          mass: 300,
+        },
+      },
+      position: {
+        x: 15,
+        y: 25,
+      },
+    },
   };
 
   return (
-    <StyledBlackHoleAnimation id="tsparticles">
+    <StyledBlackHoleAnimation>
       <Particles
         id="tsparticles"
         init={particlesInit}
