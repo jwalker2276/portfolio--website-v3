@@ -14,10 +14,11 @@ const StyledPrimaryCallToActionButton = styled.button`
   border-radius: 5px;
   font-size: 14px;
   font-weight: 600;
-  width: 96px;
+  width: 140px;
   height: 36px;
   cursor: pointer;
   text-shadow: 0 0 10px var(--neutral--color-900);
+  z-index: 10;
 `;
 
 const StyledPrimaryCallToActionLink = styled.a`
@@ -27,12 +28,13 @@ const StyledPrimaryCallToActionLink = styled.a`
   border-radius: 5px;
   font-size: 14px;
   font-weight: 600;
-  width: 96px;
+  width: 140px;
   height: 36px;
   padding: 10px 12px;
   cursor: pointer;
   text-decoration: none;
   text-shadow: 0 0 10px var(--neutral--color-900);
+  z-index: 10;
 `;
 
 const StyledButtonArrow = styled.svg`

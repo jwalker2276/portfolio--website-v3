@@ -68,7 +68,7 @@ const HeroSection = (): JSX.Element => (
       <SecondaryHeading />
       <PrimaryHeading />
       <PrimaryCallToAction
-        buttonText="Let's talk"
+        buttonText="Let's connect"
         buttonEvent={primaryActionEvent}
       />
     </StyledLeftDiv>
