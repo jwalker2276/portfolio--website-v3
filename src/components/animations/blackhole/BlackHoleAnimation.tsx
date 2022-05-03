@@ -18,10 +18,6 @@ const BlackHoleAnimation = () => {
     await loadFull(main);
   };
 
-  const particlesLoaded = (container: Container) => {
-    console.log(container);
-  };
-
   const options = {
     background: {
       position: "50% 50%",
@@ -44,20 +40,11 @@ const BlackHoleAnimation = () => {
           },
         },
         enable: true,
-        outModes: {
-          bottom: "out",
-          left: "out",
-          right: "out",
-          top: "out",
-        },
       },
       number: {
         value: 100,
       },
       opacity: {
-        random: {
-          enable: true,
-        },
         value: {
           min: 0.1,
           max: 0.5,
@@ -69,9 +56,6 @@ const BlackHoleAnimation = () => {
         },
       },
       size: {
-        random: {
-          enable: true,
-        },
         value: {
           min: 1,
           max: 5,
@@ -110,12 +94,7 @@ const BlackHoleAnimation = () => {
 
   return (
     <StyledBlackHoleAnimation>
-      <Particles
-        id="tsparticles"
-        init={particlesInit}
-        loaded={particlesLoaded}
-        options={options}
-      />
+      <Particles id="tsparticles" init={particlesInit} options={options} />
     </StyledBlackHoleAnimation>
   );
 };
