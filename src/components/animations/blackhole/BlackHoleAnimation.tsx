@@ -2,23 +2,26 @@ import React from "react";
 import styled from "styled-components";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
-import { Container, Engine } from "tsparticles-engine";
+import { Engine } from "tsparticles-engine";
+import useScreenWidth from "../../../customhooks/useScreenWidth";
 
 const StyledBlackHoleAnimation = styled.div`
   width: 100%;
   height: 100%;
-  & #tsparticles {
+  & #blackhole-animation-canvas {
     height: 100%;
     width: 100%;
   }
 `;
 
 const BlackHoleAnimation = () => {
+  const screenSize = useScreenWidth(640);
+
   const particlesInit = async (main: Engine) => {
     await loadFull(main);
   };
 
-  const options = {
+  const blackHoleOptions = {
     background: {
       position: "50% 50%",
       size: "cover",
@@ -27,10 +30,11 @@ const BlackHoleAnimation = () => {
     fps_limit: 120,
     fullScreen: {
       enable: false,
+      zIndex: -1,
     },
     particles: {
       color: {
-        value: "#5f5f5f",
+        value: "#616e7c",
       },
       move: {
         attract: {
@@ -40,9 +44,10 @@ const BlackHoleAnimation = () => {
           },
         },
         enable: true,
+        speed: 2,
       },
       number: {
-        value: 100,
+        value: screenSize === "large" ? 50 : 25,
       },
       opacity: {
         value: {
@@ -61,7 +66,7 @@ const BlackHoleAnimation = () => {
           max: 5,
         },
         animation: {
-          speed: 20,
+          speed: 1,
           minimumValue: 0.1,
         },
       },
@@ -94,7 +99,11 @@ const BlackHoleAnimation = () => {
 
   return (
     <StyledBlackHoleAnimation>
-      <Particles id="tsparticles" init={particlesInit} options={options} />
+      <Particles
+        id="blackhole-animation-canvas"
+        init={particlesInit}
+        options={blackHoleOptions}
+      />
     </StyledBlackHoleAnimation>
   );
 };
