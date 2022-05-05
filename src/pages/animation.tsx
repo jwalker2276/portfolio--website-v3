@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
-import GodPixel from "../components/canvas/GodPixel";
+import GodPixel from "../components/animations/god-pixel/GodPixel";
 import LayoutNoNavAndFooter from "../components/common/LayoutNoNavAndFooter";
 
 const StyledSection = styled.section`
