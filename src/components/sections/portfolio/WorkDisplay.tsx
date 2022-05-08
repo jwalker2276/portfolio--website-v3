@@ -3,7 +3,6 @@ import styled from "styled-components";
 import WorkDisplayImage from "./WorkDisplayImage";
 import WorkDisplayInfo from "./WorkDisplayInfo";
 
-import { useTransition } from "react-spring";
 import { device } from "../../../breakpoints";
 
 type WorkDisplayProps = {
@@ -12,13 +11,12 @@ type WorkDisplayProps = {
   linkToCode?: string;
   projectName: string;
   projectType: string;
-  gridArea: string;
 };
 
-const StyledWorkDisplay = styled.div<Pick<WorkDisplayProps, "gridArea">>`
-  grid-area: ${(props): string => props.gridArea};
+const StyledWorkDisplay = styled.div`
   position: relative;
   border: 2px solid var(--neutral--color-800);
+
   border-radius: 5px;
 
   @media ${device.tablet} {
@@ -34,38 +32,27 @@ const WorkDisplay = ({
   linkToCode,
   projectName,
   projectType,
-  gridArea,
 }: WorkDisplayProps): JSX.Element => {
-  // Pages for react spring
-  const pages = [
-    (): JSX.Element => <WorkDisplayImage imagesource={imagesource} />,
-    (): JSX.Element => (
+  const [showDetails, setShowDetails] = useState(false);
+
+  const handleEvent = () => {
+    setShowDetails(!showDetails);
+  };
+
+  return (
+    <StyledWorkDisplay
+      onClick={handleEvent}
+      onMouseEnter={handleEvent}
+      onMouseLeave={handleEvent}
+    >
+      <WorkDisplayImage imagesource={imagesource} />
       <WorkDisplayInfo
+        showDetails={showDetails}
         linkToProject={linkToProject}
         linkToCode={linkToCode}
         projectName={projectName}
         projectType={projectType}
       />
-    ),
-  ];
-
-  // React Spring
-  const [index, setPage] = useState(0);
-  const onClick = useCallback(() => {
-    setPage((pageState) => (pageState === 1 ? 0 : 1));
-  }, []);
-  const transitions = useTransition(index, (p) => p, {
-    from: { opacity: 0, transform: "translate3d(100%,0%,0%)" },
-    enter: { opacity: 1, transform: "translate3d(0%,0%,0%)" },
-    leave: { opacity: 0, transform: "translate3d(-50%,0%,0%)" },
-  });
-
-  return (
-    <StyledWorkDisplay gridArea={gridArea} onClick={onClick}>
-      {transitions.map(({ item, props, key }) => {
-        const Page = pages[item];
-        return <Page key={key} />;
-      })}
     </StyledWorkDisplay>
   );
 };

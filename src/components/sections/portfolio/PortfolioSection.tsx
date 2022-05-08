@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { device } from "../../../breakpoints";
 import PrimaryCallToActionButton from "../../common/buttons/PrimaryCallToAction";
 import SectionHeader from "../common/SectionHeader";
-import PortfolioWorkDisplay from "./PortfolioWorkDisplay";
+import PortfolioWorkGrid from "./PortfolioWorkGrid";
 
 const StyledPortfolioSection = styled.section`
   padding: var(--page--padding);
@@ -12,7 +12,6 @@ const StyledPortfolioSection = styled.section`
   height: 100%;
   display: grid;
   grid-template: auto 1fr auto / 1fr;
-  overflow-x: hidden;
 
   @media ${device.tablet} {
     padding-bottom: 64px;
@@ -30,7 +29,7 @@ const PortfolioSection = (): JSX.Element => (
       titleText="Portfolio"
       subTitleText="See what I have already built."
     />
-    <PortfolioWorkDisplay />
+    <PortfolioWorkGrid />
     <StyledButtonWrapper>
       <PrimaryCallToActionButton buttonText="Linkedin" buttonType="link" />
     </StyledButtonWrapper>

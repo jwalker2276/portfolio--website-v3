@@ -9,22 +9,32 @@ type WorkDisplayInfoProps = {
   linkToCode?: string;
   projectName: string;
   projectType: string;
+  showDetails: boolean;
 };
 
-const StyledWorkDisplayInfo = styled(animated.div)`
+type DisplayInfoType = {
+  showDetails?: boolean;
+};
+
+const StyledWorkDisplayInfo = styled.div<DisplayInfoType>`
   position: absolute;
-  min-width: 343px;
-  min-height: 216px;
-  background-color: var(--neutral--color-800);
+  opacity: ${(props): string => (props.showDetails ? "100%" : "0%")};
+  background: linear-gradient(
+    0deg,
+    var(--shadow--color-500) 0%,
+    var(--shadow--color-500) 100%
+  );
+  transform: translateY(0);
   height: 100%;
   width: 100%;
-  border-radius: 5px;
-  border: 2px solid var(--primary--color-100);
   padding: 16px;
   display: grid;
   grid-template: auto auto 1fr / 1fr;
+  justify-items: center;
+  align-items: center;
   box-shadow: inset 0px 0px 8px 4px var(--shadow--color-500);
-
+  transition: opacity 0.25s ease-in-out;
+  z-index: 10;
   @media ${device.tablet} {
     position: relative;
     min-width: 1px;
@@ -36,7 +46,7 @@ const StyledLinksWrapper = styled.div`
   width: 100%;
   height: 100%;
   display: grid;
-  grid-template: 1fr / 1fr 1fr;
+  grid-template: 1fr 1fr / 1fr;
   align-items: center;
   justify-items: center;
 `;
@@ -61,14 +71,14 @@ const WorkDisplayInfo = ({
   linkToCode,
   projectName,
   projectType,
+  showDetails,
 }: WorkDisplayInfoProps): JSX.Element => {
   return (
-    <StyledWorkDisplayInfo>
+    <StyledWorkDisplayInfo showDetails={showDetails}>
       <StyledProjectName>{projectName}</StyledProjectName>
       <StyledProjectType>{projectType}</StyledProjectType>
       <StyledLinksWrapper>
         <WorkLink link={linkToProject} variant="primary" />
-
         <WorkLink
           link={linkToCode}
           variant={linkToCode === undefined ? "private" : "secondary"}
