@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { animated } from "react-spring";
 import WorkLink from "./WorkLink";
 import { device } from "../../../breakpoints";
 
@@ -9,22 +8,9 @@ type WorkDisplayInfoProps = {
   linkToCode?: string;
   projectName: string;
   projectType: string;
-  showDetails: boolean;
 };
 
-type DisplayInfoType = {
-  showDetails?: boolean;
-};
-
-const StyledWorkDisplayInfo = styled.div<DisplayInfoType>`
-  position: absolute;
-  opacity: ${(props): string => (props.showDetails ? "100%" : "0%")};
-  background: linear-gradient(
-    0deg,
-    var(--shadow--color-500) 0%,
-    var(--shadow--color-500) 100%
-  );
-  transform: translateY(0);
+const StyledWorkDisplayInfo = styled.div`
   height: 100%;
   width: 100%;
   padding: 16px;
@@ -71,17 +57,16 @@ const WorkDisplayInfo = ({
   linkToCode,
   projectName,
   projectType,
-  showDetails,
 }: WorkDisplayInfoProps): JSX.Element => {
   return (
-    <StyledWorkDisplayInfo showDetails={showDetails}>
+    <StyledWorkDisplayInfo>
       <StyledProjectName>{projectName}</StyledProjectName>
       <StyledProjectType>{projectType}</StyledProjectType>
       <StyledLinksWrapper>
         <WorkLink link={linkToProject} variant="primary" />
         <WorkLink
           link={linkToCode}
-          variant={linkToCode === undefined ? "private" : "secondary"}
+          variant={linkToCode ? "secondary" : "private"}
         />
       </StyledLinksWrapper>
     </StyledWorkDisplayInfo>

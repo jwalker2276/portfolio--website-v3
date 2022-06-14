@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React from "react";
 import styled from "styled-components";
 import WorkDisplayImage from "./WorkDisplayImage";
 import WorkDisplayInfo from "./WorkDisplayInfo";
@@ -7,17 +7,17 @@ import { device } from "../../../breakpoints";
 
 type WorkDisplayProps = {
   imagesource: string;
+  imageAlt: string;
   linkToProject: string;
   linkToCode?: string;
   projectName: string;
   projectType: string;
+  flipColumnPosition?: boolean;
 };
 
 const StyledWorkDisplay = styled.div`
-  position: relative;
-  border: 2px solid var(--neutral--color-800);
-
-  border-radius: 5px;
+  display: grid;
+  grid-template: 1fr / 1fr 1fr;
 
   @media ${device.tablet} {
     width: 100%;
@@ -28,26 +28,31 @@ const StyledWorkDisplay = styled.div`
 
 const WorkDisplay = ({
   imagesource,
+  imageAlt,
   linkToProject,
   linkToCode,
   projectName,
   projectType,
+  flipColumnPosition,
 }: WorkDisplayProps): JSX.Element => {
-  const [showDetails, setShowDetails] = useState(false);
-
-  const handleEvent = () => {
-    setShowDetails(!showDetails);
-  };
+  if (flipColumnPosition) {
+    return (
+      <StyledWorkDisplay>
+        <WorkDisplayInfo
+          linkToProject={linkToProject}
+          linkToCode={linkToCode}
+          projectName={projectName}
+          projectType={projectType}
+        />
+        <WorkDisplayImage src={imagesource} alt={imageAlt} />
+      </StyledWorkDisplay>
+    );
+  }
 
   return (
-    <StyledWorkDisplay
-      onClick={handleEvent}
-      onMouseEnter={handleEvent}
-      onMouseLeave={handleEvent}
-    >
-      <WorkDisplayImage imagesource={imagesource} />
+    <StyledWorkDisplay>
+      <WorkDisplayImage src={imagesource} alt={imageAlt} />
       <WorkDisplayInfo
-        showDetails={showDetails}
         linkToProject={linkToProject}
         linkToCode={linkToCode}
         projectName={projectName}
