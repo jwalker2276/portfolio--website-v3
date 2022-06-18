@@ -9,7 +9,7 @@ type WorkLinkProps = {
 const StyledWorkLinkPrimary = styled.a`
   background-color: var(--primary--color-600);
   color: var(--primary--color-000);
-  border: none;
+  border: 2px solid var(--primary--color-600);
   border-radius: 5px;
   font-size: 14px;
   font-weight: 600;

@@ -19,23 +19,18 @@ const StyledPortfolioWorkGrid = styled.div`
 `;
 
 const PortfolioWorkGrid = (): JSX.Element => {
-  // State
-  const [isDeterminingScreenSize, setIsProcessing] = useState(true);
-
   // Custom hook
   let screenSize = useScreenWidth();
 
+  const [flipColumnPos, setShouldFlipColumnPos] = useState(true);
+
   useEffect(() => {
-    if (screenSize) setIsProcessing(false);
-
-    return (): void => {
-      setIsProcessing(true);
-    };
-  }, []);
-
-  if (isDeterminingScreenSize || screenSize === undefined) {
-    return <p>Loading...</p>;
-  }
+    if (screenSize === "small") {
+      setShouldFlipColumnPos(false);
+    } else {
+      setShouldFlipColumnPos(true);
+    }
+  }, [screenSize]);
 
   return (
     <StyledPortfolioWorkGrid>
@@ -53,7 +48,7 @@ const PortfolioWorkGrid = (): JSX.Element => {
         linkToCode="https://github.com/jwalker2276/gatsby-site-demo"
         projectName="Downshift"
         projectType="Website"
-        flipColumnPosition={true}
+        flipColumnPosition={flipColumnPos}
       />
       <WorkDisplay
         imagesource={vindecoderImage}

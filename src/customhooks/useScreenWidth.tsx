@@ -27,6 +27,7 @@ const useScreenWidth = (maxWidth = 768): string => {
       };
     }
   }, [isClient]);
+
   return screenLayoutType;
 };
 

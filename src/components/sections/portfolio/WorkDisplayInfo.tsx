@@ -20,11 +20,16 @@ const StyledWorkDisplayInfo = styled.div`
   align-items: center;
   transition: opacity 0.25s ease-in-out;
   z-index: 10;
+  row-gap: 24px;
 
   @media ${device.tablet} {
     position: relative;
     min-width: 1px;
     min-height: 1px;
+  }
+
+  @media ${device.mobileL} {
+    padding: 24px 0;
   }
 `;
 
@@ -33,7 +38,7 @@ const StyledInfoWrapper = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
 `;
 
@@ -41,9 +46,13 @@ const StyledLinksWrapper = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   column-gap: 16px;
+
+  @media ${device.mobileS} {
+    column-gap: 6px;
+  }
 `;
 
 const StyledProjectName = styled.h5`
@@ -52,6 +61,10 @@ const StyledProjectName = styled.h5`
   letter-spacing: 1.2px;
   color: var(--primary--color-000);
   margin: 0 0 8px 0;
+
+  @media ${device.mobileL || device.mobileM || device.mobileS} {
+    font-size: 24px;
+  }
 `;
 
 const StyledProjectType = styled.p`
