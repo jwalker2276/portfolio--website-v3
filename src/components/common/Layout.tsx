@@ -60,6 +60,10 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;	
     z-index: 10
   }	
+
+  *:focus-visible{
+    outline: var(--primary--color-000) dashed 2px;
+  }
 `;
 
 interface Props {
