@@ -19,6 +19,15 @@ const StyledPrimaryCallToActionButton = styled.button`
   cursor: pointer;
   text-shadow: 0 0 10px var(--neutral--color-900);
   z-index: 10;
+  transition: transform 0.1s ease-in;
+
+  &:hover {
+    transform: translateY(-4px);
+  }
+
+  &:hover svg {
+    transform: rotate(360deg);
+  }
 `;
 
 const StyledPrimaryCallToActionLink = styled.a`
@@ -35,6 +44,11 @@ const StyledPrimaryCallToActionLink = styled.a`
   text-decoration: none;
   text-shadow: 0 0 10px var(--neutral--color-900);
   z-index: 10;
+  transition: transform 0.1s ease-in;
+
+  &:hover svg {
+    transform: rotate(360deg);
+  }
 `;
 
 const StyledButtonArrow = styled.svg`
@@ -42,6 +56,7 @@ const StyledButtonArrow = styled.svg`
   height: 8px;
   fill: var(--primary--color-100);
   margin-left: 8px;
+  transition: all 0.2s ease-in-out;
 `;
 
 const PrimaryCallToActionButton = ({

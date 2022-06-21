@@ -13,7 +13,7 @@ const StyledNavWrapper = styled.header`
   justify-content: space-between;
   align-items: center;
   padding: 0 0px;
-  z-index: 10;
+  z-index: 15;
 `;
 
 const pages = [

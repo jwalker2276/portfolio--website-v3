@@ -16,6 +16,11 @@ const StyledContactLinkContainer = styled.a`
   font-weight: 500;
   font-size: 16px;
   width: 100%;
+  transition: color 0.2s ease-in-out;
+
+  &:hover {
+    color: var(--primary--color-600);
+  }
 `;
 const ContactLinkContainer = ({
   shortLink,

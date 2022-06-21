@@ -18,6 +18,11 @@ const StyledWorkLinkPrimary = styled.a`
   cursor: pointer;
   text-decoration: none;
   text-align: center;
+  transition: transform 0.1s ease-in;
+
+  &:hover {
+    transform: translateY(-4px);
+  }
 `;
 
 const StyledWorkLinkSecondary = styled.a`
@@ -32,6 +37,11 @@ const StyledWorkLinkSecondary = styled.a`
   cursor: pointer;
   text-decoration: none;
   text-align: center;
+  transition: transform 0.1s ease-in;
+
+  &:hover {
+    transform: translateY(-4px);
+  }
 `;
 
 const StyledWorkLinkPrivate = styled.a`
@@ -46,6 +56,11 @@ const StyledWorkLinkPrivate = styled.a`
   cursor: pointer;
   text-decoration: none;
   text-align: center;
+  transition: transform 0.1s ease-in;
+
+  &:hover {
+    transform: translateY(-4px);
+  }
 `;
 
 const WorkLink = ({ variant, link }: WorkLinkProps): JSX.Element => {
