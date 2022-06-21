@@ -14,12 +14,8 @@ const SEO = ({ title, description, image, article }: SEOProps): JSX.Element => {
   const { pathname } = useLocation();
   const { site } = useStaticQuery(query);
 
-  const {
-    defaultTitle,
-    defaultDescription,
-    siteUrl,
-    defaultImage,
-  } = site.siteMetadata;
+  const { defaultTitle, defaultDescription, siteUrl, defaultImage } =
+    site.siteMetadata;
 
   const seo = {
     title: title || defaultTitle,

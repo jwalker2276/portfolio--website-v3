@@ -21,7 +21,7 @@ const StyledUpperFooter = styled.div`
 
 const UpperFooter = (): JSX.Element => (
   <StyledUpperFooter>
-    <StyledLogoLink sizeVarient="large" />
+    <StyledLogoLink sizeVariant="large" />
     <UpperFooterMainStatement statementText="Let's make something amazing." />
     <NavLinks />
   </StyledUpperFooter>

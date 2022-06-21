@@ -19,11 +19,11 @@ import useScreenWidth from "../../../customhooks/useScreenWidth";
 import { device } from "../../../breakpoints";
 
 // Content for this section
-const rowOneTitle = "Custom Web Application";
+const rowOneTitle = "Custom Web Applications";
 const rowOneText =
   "If you need more than a simple website, no problem. I can build web applications to meet the needs of your customers and you.";
 
-const rowTwoTitle = "Unique Web Sites";
+const rowTwoTitle = "Unique Sites and Animations";
 const rowTwoText =
   "Need something more unique than most websites, great. I can formulate optimized websites that make your brand stand out.";
 

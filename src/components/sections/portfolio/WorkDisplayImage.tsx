@@ -1,41 +1,32 @@
 import React from "react";
 import styled from "styled-components";
-import { animated } from "react-spring";
 import { device } from "../../../breakpoints";
 
 type WorkDisplayImageProps = {
-  imagesource: string;
-  style: React.CSSProperties;
+  src: string;
+  alt: string;
 };
 
-const StyledWorkDisplayImage = styled(animated.div)<WorkDisplayImageProps>`
-  position: absolute;
-  min-width: 343px;
-  min-height: 216px;
+const StyledWorkDisplayImage = styled.img<WorkDisplayImageProps>`
   width: 100%;
-  height: 100%;
-  background-image: url(${(props): string => props.imagesource});
-  background-size: cover;
-  background-repeat: no-repeat;
+  max-width: 480px;
+  height: auto;
   border-radius: 5px;
+  box-shadow: 0px 0px 2px 5px var(--shadow--color-500);
 
   @media ${device.tablet} {
     position: relative;
     min-width: 1px;
     min-height: 1px;
   }
+
+  @media ${device.tabletS} {
+    max-width: 100%;
+  }
 `;
 
-const WorkDisplayImage = ({
-  imagesource,
-  style,
-}: WorkDisplayImageProps): JSX.Element => {
-  return (
-    <StyledWorkDisplayImage
-      imagesource={imagesource}
-      style={style}
-    ></StyledWorkDisplayImage>
-  );
+const WorkDisplayImage = ({ src, alt }: WorkDisplayImageProps): JSX.Element => {
+  return <StyledWorkDisplayImage src={src} alt={alt} />;
 };
 
 export default WorkDisplayImage;

@@ -92,10 +92,9 @@ const AboutSection = (): JSX.Element => {
   let screenSize = useScreenWidth();
 
   useEffect(() => {
-    if (screenSize !== undefined) setIsProcessing(false);
+    if (screenSize) setIsProcessing(false);
 
     return (): void => {
-      screenSize = undefined;
       setIsProcessing(true);
     };
   }, []);
@@ -116,7 +115,7 @@ const AboutSection = (): JSX.Element => {
         titleText="Who I am"
         subTitleText="About my craft and knowledge."
       />
-      <SectionIntroText displayText="I'm passionate about creating interesting web assets with a strong emphasis on clean code." />
+      <SectionIntroText displayText="I'm passionate about creating interesting assets with a strong emphasis on clean code." />
       <AboutRow>
         {screenSize === "large" && (
           <AboutRowIconsContainer>

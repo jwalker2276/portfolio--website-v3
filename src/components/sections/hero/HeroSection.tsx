@@ -8,6 +8,7 @@ import PrimaryCallToAction from "../../common/buttons/PrimaryCallToAction";
 import BackgroundImageHero from "./BackgroundImageHero";
 import BorderImageHero from "./BorderImageHero";
 import bkImage from "../../../images/hero_bk_v2.png";
+import BlackHoleAnimationWrapper from "../../animations/blackhole/BlackHoleAnimationWrapper";
 
 type HeroSectionProps = {
   backgroundImage: string;
@@ -61,12 +62,13 @@ const primaryActionEvent = (): void => {
 
 const HeroSection = (): JSX.Element => (
   <StyledHeroSection id="hero" backgroundImage={bkImage}>
+    <BlackHoleAnimationWrapper />
     <BorderImageHero />
     <StyledLeftDiv>
       <SecondaryHeading />
       <PrimaryHeading />
       <PrimaryCallToAction
-        buttonText="Let's talk"
+        buttonText="Let's connect"
         buttonEvent={primaryActionEvent}
       />
     </StyledLeftDiv>

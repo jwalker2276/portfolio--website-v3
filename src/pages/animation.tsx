@@ -1,8 +1,12 @@
 import React from "react";
 import styled from "styled-components";
+import Loadable from "@loadable/component";
 import { Link } from "gatsby";
-import GodPixel from "../components/canvas/GodPixel";
 import LayoutNoNavAndFooter from "../components/common/LayoutNoNavAndFooter";
+
+const GodPixel = Loadable(
+  () => import("../components/animations/god-pixel/GodPixel")
+);
 
 const StyledSection = styled.section`
   padding: 0 20%;

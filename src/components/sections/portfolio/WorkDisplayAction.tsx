@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 type WorkDisplayActionProps = {
   displayActionText: string;
-  dipslayActionEvent: () => void;
+  displayActionEvent: () => void;
 };
 
 const StyledWorkDisplayAction = styled.button`
@@ -18,9 +18,9 @@ const StyledWorkDisplayAction = styled.button`
 
 const WorkDisplayAction = ({
   displayActionText,
-  dipslayActionEvent,
+  displayActionEvent,
 }: WorkDisplayActionProps): JSX.Element => (
-  <StyledWorkDisplayAction onClick={dipslayActionEvent}>
+  <StyledWorkDisplayAction onClick={displayActionEvent}>
     {displayActionText}
   </StyledWorkDisplayAction>
 );

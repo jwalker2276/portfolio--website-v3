@@ -2,14 +2,14 @@ import React from "react";
 import styled from "styled-components";
 
 type WorkLinkProps = {
-  varient: string;
+  variant: string;
   link?: string;
 };
 
 const StyledWorkLinkPrimary = styled.a`
   background-color: var(--primary--color-600);
   color: var(--primary--color-000);
-  border: none;
+  border: 2px solid var(--primary--color-600);
   border-radius: 5px;
   font-size: 14px;
   font-weight: 600;
@@ -18,6 +18,11 @@ const StyledWorkLinkPrimary = styled.a`
   cursor: pointer;
   text-decoration: none;
   text-align: center;
+  transition: transform 0.1s ease-in;
+
+  &:hover {
+    transform: translateY(-4px);
+  }
 `;
 
 const StyledWorkLinkSecondary = styled.a`
@@ -32,6 +37,11 @@ const StyledWorkLinkSecondary = styled.a`
   cursor: pointer;
   text-decoration: none;
   text-align: center;
+  transition: transform 0.1s ease-in;
+
+  &:hover {
+    transform: translateY(-4px);
+  }
 `;
 
 const StyledWorkLinkPrivate = styled.a`
@@ -46,10 +56,15 @@ const StyledWorkLinkPrivate = styled.a`
   cursor: pointer;
   text-decoration: none;
   text-align: center;
+  transition: transform 0.1s ease-in;
+
+  &:hover {
+    transform: translateY(-4px);
+  }
 `;
 
-const WorkLink = ({ varient, link }: WorkLinkProps): JSX.Element => {
-  if (varient === "primary") {
+const WorkLink = ({ variant, link }: WorkLinkProps): JSX.Element => {
+  if (variant === "primary") {
     return (
       <StyledWorkLinkPrimary
         href={link}
@@ -59,7 +74,7 @@ const WorkLink = ({ varient, link }: WorkLinkProps): JSX.Element => {
         View Project
       </StyledWorkLinkPrimary>
     );
-  } else if (varient === "private") {
+  } else if (variant === "private") {
     return (
       <StyledWorkLinkPrivate
         href="https://github.com/jwalker2276"

@@ -6,7 +6,7 @@ const StyledNavActions = styled.div``;
 
 const NavActions = (): JSX.Element => (
   <StyledNavActions>
-    <NavLinks varient="top nav" />
+    <NavLinks variant="top nav" />
   </StyledNavActions>
 );
 

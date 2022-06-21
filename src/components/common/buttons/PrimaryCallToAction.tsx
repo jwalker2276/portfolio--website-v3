@@ -14,10 +14,20 @@ const StyledPrimaryCallToActionButton = styled.button`
   border-radius: 5px;
   font-size: 14px;
   font-weight: 600;
-  width: 96px;
+  width: 140px;
   height: 36px;
   cursor: pointer;
   text-shadow: 0 0 10px var(--neutral--color-900);
+  z-index: 10;
+  transition: transform 0.1s ease-in;
+
+  &:hover {
+    transform: translateY(-4px);
+  }
+
+  &:hover svg {
+    transform: rotate(360deg);
+  }
 `;
 
 const StyledPrimaryCallToActionLink = styled.a`
@@ -27,12 +37,18 @@ const StyledPrimaryCallToActionLink = styled.a`
   border-radius: 5px;
   font-size: 14px;
   font-weight: 600;
-  width: 96px;
+  width: 140px;
   height: 36px;
   padding: 10px 12px;
   cursor: pointer;
   text-decoration: none;
   text-shadow: 0 0 10px var(--neutral--color-900);
+  z-index: 10;
+  transition: transform 0.1s ease-in;
+
+  &:hover svg {
+    transform: rotate(360deg);
+  }
 `;
 
 const StyledButtonArrow = styled.svg`
@@ -40,6 +56,7 @@ const StyledButtonArrow = styled.svg`
   height: 8px;
   fill: var(--primary--color-100);
   margin-left: 8px;
+  transition: all 0.2s ease-in-out;
 `;
 
 const PrimaryCallToActionButton = ({

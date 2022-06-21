@@ -17,7 +17,7 @@ const StyledPrimaryHeading = styled.h2`
 
 const PrimaryHeading = (): JSX.Element => (
   <StyledPrimaryHeading>
-    Hello, my name&apos;s Jordan. I&apos;m a Full-Stack Web Developer.
+    Hello, my name&apos;s Jordan. I&apos;m a Full-Stack App Developer.
   </StyledPrimaryHeading>
 );
 

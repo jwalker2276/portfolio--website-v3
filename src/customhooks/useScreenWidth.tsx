@@ -22,11 +22,12 @@ const useScreenWidth = (maxWidth = 768): string => {
 
       // Cleanup on unmount
       return (): void => {
-        setScreenLayoutType(undefined);
+        setScreenLayoutType("large");
         window.removeEventListener("resize", updatedLayoutSize);
       };
     }
   }, [isClient]);
+
   return screenLayoutType;
 };
 

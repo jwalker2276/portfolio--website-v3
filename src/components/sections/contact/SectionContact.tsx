@@ -3,7 +3,6 @@ import styled from "styled-components";
 import SectionHeader from "../common/SectionHeader";
 import SectionIntroText from "../common/SectionIntroText";
 import PrimaryContactMethod from "./PrimaryContactMethod";
-import SecondaryContactMethod from "./SecondaryContactMethod";
 import BackgroundImages from "./BackgroundImages";
 import { device } from "../../../breakpoints";
 
@@ -32,7 +31,7 @@ const StyledSectionContactMethods = styled.div`
   }
 
   @media ${device.tabletS} {
-    margin: 0;
+    margin: 32px 0 0 0;
     grid-template: auto 1fr / 1fr;
     align-items: center;
   }
@@ -42,10 +41,9 @@ const SectionContact = (): JSX.Element => (
   <StyledSectionContact id="contact">
     <BackgroundImages />
     <SectionHeader titleText="Say Hello" subTitleText="Let's Work Together." />
-    <SectionIntroText displayText="I'd love to meet with you to discuss your ideas and potential collaborations." />
+    <SectionIntroText displayText="I'd love to connect with you to discuss your ideas and potential collaborations." />
     <StyledSectionContactMethods>
       <PrimaryContactMethod />
-      <SecondaryContactMethod />
     </StyledSectionContactMethods>
   </StyledSectionContact>
 );

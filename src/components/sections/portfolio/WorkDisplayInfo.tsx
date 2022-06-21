@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { animated } from "react-spring";
 import WorkLink from "./WorkLink";
 import { device } from "../../../breakpoints";
 
@@ -9,37 +8,51 @@ type WorkDisplayInfoProps = {
   linkToCode?: string;
   projectName: string;
   projectType: string;
-  style: React.CSSProperties;
 };
 
-const StyledWorkDisplayInfo = styled(animated.div)`
-  position: absolute;
-  min-width: 343px;
-  min-height: 216px;
-  background-color: var(--neutral--color-800);
+const StyledWorkDisplayInfo = styled.div`
   height: 100%;
   width: 100%;
-  border-radius: 5px;
-  border: 2px solid var(--primary--color-100);
   padding: 16px;
   display: grid;
-  grid-template: auto auto 1fr / 1fr;
-  box-shadow: inset 0px 0px 8px 4px var(--shadow--color-500);
+  grid-template: 1fr 1fr / 1fr;
+  justify-items: center;
+  align-items: center;
+  transition: opacity 0.25s ease-in-out;
+  z-index: 10;
+  row-gap: 24px;
 
   @media ${device.tablet} {
     position: relative;
     min-width: 1px;
     min-height: 1px;
   }
+
+  @media ${device.mobileL} {
+    padding: 24px 0;
+  }
+`;
+
+const StyledInfoWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
 `;
 
 const StyledLinksWrapper = styled.div`
   width: 100%;
   height: 100%;
-  display: grid;
-  grid-template: 1fr / 1fr 1fr;
-  align-items: center;
-  justify-items: center;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  column-gap: 16px;
+
+  @media ${device.mobileS} {
+    column-gap: 6px;
+  }
 `;
 
 const StyledProjectName = styled.h5`
@@ -47,14 +60,18 @@ const StyledProjectName = styled.h5`
   font-weight: 600;
   letter-spacing: 1.2px;
   color: var(--primary--color-000);
-  margin: 0 0 16px 0;
+  margin: 0 0 8px 0;
+
+  @media ${device.mobileL || device.mobileM || device.mobileS} {
+    font-size: 24px;
+  }
 `;
 
 const StyledProjectType = styled.p`
-  font-size: 24px;
+  font-size: 16px;
   font-weight: 400;
   color: var(--primary--color-100);
-  margin: 0 0 32px 0;
+  margin: 0 0 0 0;
 `;
 
 const WorkDisplayInfo = ({
@@ -62,18 +79,18 @@ const WorkDisplayInfo = ({
   linkToCode,
   projectName,
   projectType,
-  style,
 }: WorkDisplayInfoProps): JSX.Element => {
   return (
-    <StyledWorkDisplayInfo style={style}>
-      <StyledProjectName>{projectName}</StyledProjectName>
-      <StyledProjectType>{projectType}</StyledProjectType>
+    <StyledWorkDisplayInfo>
+      <StyledInfoWrapper>
+        <StyledProjectName>{projectName}</StyledProjectName>
+        <StyledProjectType>{projectType}</StyledProjectType>
+      </StyledInfoWrapper>
       <StyledLinksWrapper>
-        <WorkLink link={linkToProject} varient="primary" />
-
+        <WorkLink link={linkToProject} variant="primary" />
         <WorkLink
           link={linkToCode}
-          varient={linkToCode === undefined ? "private" : "secondary"}
+          variant={linkToCode ? "secondary" : "private"}
         />
       </StyledLinksWrapper>
     </StyledWorkDisplayInfo>

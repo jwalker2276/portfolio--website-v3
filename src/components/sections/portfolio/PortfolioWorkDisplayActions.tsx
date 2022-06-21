@@ -23,22 +23,22 @@ const PortfolioWorkDisplayActions = (): JSX.Element => {
     <StyledPortfolioWorkDisplayActions>
       <WorkDisplayAction
         displayActionText="All Projects"
-        dipslayActionEvent={(): void => selectionEvent("all")}
+        displayActionEvent={(): void => selectionEvent("all")}
         // isActive={true}
       />
       <WorkDisplayAction
         displayActionText="Web Applications"
-        dipslayActionEvent={(): void => selectionEvent("apps")}
+        displayActionEvent={(): void => selectionEvent("apps")}
         // isActive={false}
       />
       <WorkDisplayAction
         displayActionText="Web Sites"
-        dipslayActionEvent={(): void => selectionEvent("sites")}
+        displayActionEvent={(): void => selectionEvent("sites")}
         // isActive={false}
       />
       <WorkDisplayAction
         displayActionText="Features"
-        dipslayActionEvent={(): void => selectionEvent("features")}
+        displayActionEvent={(): void => selectionEvent("features")}
         // isActive={false}
       />
     </StyledPortfolioWorkDisplayActions>

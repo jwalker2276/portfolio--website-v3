@@ -34,6 +34,7 @@ const GlobalStyle = createGlobalStyle`
     /* Spacing */	
     --page--padding: 0px 0px;	
   }	
+
   html, body, #___gatsby {	
     width: 100%;	
     height: 100%;	
@@ -52,11 +53,17 @@ const GlobalStyle = createGlobalStyle`
       padding: 0 16px	
     }    	
   }	
+  
   * {	
     box-sizing: border-box;	
     margin: 0;	
     padding: 0;	
+    z-index: 10
   }	
+
+  *:focus-visible{
+    outline: var(--primary--color-000) dashed 2px;
+  }
 `;
 
 interface Props {
